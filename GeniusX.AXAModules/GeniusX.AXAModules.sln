@@ -1,0 +1,429 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{E71ABE42-89D0-4BE5-A1F4-92F7908E6A89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shell UI", "Shell UI", "{CD6FAEA1-1F53-40AA-A43D-BCBA2A08B3DF}"
+	ProjectSection(SolutionItems) = preProject
+		Config\Shell UI\ComponentPathConfiguration.xaml = Config\Shell UI\ComponentPathConfiguration.xaml
+		Config\Shell UI\ShellConfiguration.AXA.xaml = Config\Shell UI\ShellConfiguration.AXA.xaml
+		Config\Shell UI\Web.UI.AXA.config = Config\Shell UI\Web.UI.AXA.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0C699007-5230-4722-BEB1-0122056DC0AC}"
+	ProjectSection(SolutionItems) = preProject
+		AXACSModule.vsmdi = AXACSModule.vsmdi
+		Local.testsettings = Local.testsettings
+		Solution Items\SolutionInfo.cs = Solution Items\SolutionInfo.cs
+		Solution Items\SolutionVersionInfo.cs = Solution Items\SolutionVersionInfo.cs
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client Services", "Client Services", "{C12F84EA-5F48-4F0F-87AD-25BEBC4B42D6}"
+	ProjectSection(SolutionItems) = preProject
+		Config\Client Services\Web.ClientServices.AXA.config = Config\Client Services\Web.ClientServices.AXA.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Custom", "Custom", "{D8052F89-B1D3-4CE4-9715-1161B5AAD3AC}"
+	ProjectSection(SolutionItems) = preProject
+		Config\Custom\ComponentPath.config = Config\Custom\ComponentPath.config
+		Config\Custom\Dataload.config = Config\Custom\Dataload.config
+		Config\Custom\K2WorkFlow.config = Config\Custom\K2WorkFlow.config
+		Config\Custom\Processes.config = Config\Custom\Processes.config
+		Config\Custom\Sharepoint.config = Config\Custom\Sharepoint.config
+		Config\Custom\Unity.config = Config\Custom\Unity.config
+		Config\Custom\Warmup.config = Config\Custom\Warmup.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Host", "Service Host", "{77E5E967-B945-4AF8-BF8C-77F87DD7C9FE}"
+	ProjectSection(SolutionItems) = preProject
+		Config\Service Host\Web.ServiceHost.AXA.config = Config\Service Host\Web.ServiceHost.AXA.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Claims", "Claims", "{22294415-17E8-458D-8E58-E47142E7A2B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Underwriting", "Underwriting", "{D336D722-7658-4399-95A7-509C1A173CF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scheduler", "Scheduler", "{7DA04596-17C8-4847-976D-06709E914264}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design Studio", "Design Studio", "{9B7C0203-6FE4-416B-829A-7BE5632462E3}"
+	ProjectSection(SolutionItems) = preProject
+		Config\Design Studio\App.DesignStudio.AXA.config = Config\Design Studio\App.DesignStudio.AXA.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design Studio", "Design Studio", "{9E3ADC21-681D-41B5-918B-555F282E299A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DPService", "DPService", "{0659DE52-F555-4E1F-9D95-74903D738FD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InsuranceDirectory", "InsuranceDirectory", "{108B3D97-0C8A-4D43-9FCB-54C7B57C4471}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransferWorker", "TransferWorker", "{ADD9F0CD-08BA-4344-947B-EE178BE23DA5}"
+	ProjectSection(SolutionItems) = preProject
+		Config\TransferWorker\App.TransferWorker.AXA.config = Config\TransferWorker\App.TransferWorker.AXA.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AXACustomUI", "AXACustomUI", "{2098369C-9A51-480A-9688-77D32DD20101}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsService", "WindowsService", "{754F2B14-1A37-4813-B78F-C977E7B8D40B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClaimWakeUpService", "ClaimWakeUpService", "{B2003D99-166B-42EF-A73B-96AA5A30800C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.Claims.BusinessLogic", "Claims\GeniusX.AXA.Claims.BusinessLogic\GeniusX.AXA.Claims.BusinessLogic.csproj", "{551BDCF2-F222-40D9-B98C-E80F00EED0D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.Underwriting.BusinessLogic", "Underwriting\GeniusX.AXA.Underwriting.BusinessLogic\GeniusX.AXA.Underwriting.BusinessLogic.csproj", "{1F6678D6-CB93-4988-A510-7E62855952B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.FrontendModules.Claims", "Claims\GeniusX.AXA.FrontendModules.Claims\GeniusX.AXA.FrontendModules.Claims.csproj", "{E1D92090-E7CB-4276-B659-8B15B45DC7D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.ClaimsTest", "Claims\GeniusX.AXA.ClaimsTest\GeniusX.AXA.ClaimsTest.csproj", "{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduledTaskClient", "Scheduler\ScheduledTaskClient\ScheduledTaskClient.csproj", "{DC248CA5-6254-4910-8B31-837BE5953E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.DesignStudio.Framework", "Design Studio\GeniusX.AXA.DesignStudio.Framework\GeniusX.AXA.DesignStudio.Framework.csproj", "{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.DPService", "DPService\GeniusX.AXA.DPService\GeniusX.AXA.DPService.csproj", "{83FBD4B0-82B5-456E-96E6-297E83318FDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.FrontendModules.Underwriting", "Underwriting\GeniusX.AXA.FrontendModules.Underwriting\GeniusX.AXA.FrontendModules.Underwriting.csproj", "{67C0CFEA-5857-4260-81DA-0030F14441C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.Underwriting.Test", "Underwriting\GeniusX.AXA.Underwriting.Test\GeniusX.AXA.Underwriting.Test.csproj", "{7D816E06-5303-47DA-91B3-B6DCEA66075F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.InsuranceDirectory.BusinessLogic", "InsuranceDirectory\GeniusX.AXA.InsuranceDirectory.BusinessLogic\GeniusX.AXA.InsuranceDirectory.BusinessLogic.csproj", "{5F5CBFA0-221F-4119-A317-733EE3776622}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.InsuranceDirectory.Test", "InsuranceDirectory\GeniusX.AXA.InsuranceDirectory.Test\GeniusX.AXA.InsuranceDirectory.Test.csproj", "{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.FrontendModules.InsuranceDirectory", "InsuranceDirectory\GeniusX.AXA.FrontendModules.InsuranceDirectory\GeniusX.AXA.FrontendModules.InsuranceDirectory.csproj", "{6C033982-0E0B-4140-8387-73F51B4FF5B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.CustomUI", "GeniusX.AXA.CustomUI\GeniusX.AXA.CustomUI.csproj", "{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXACS.FileWatcher", "WindowsService\GeniusX.AXACS.FileWatcher\GeniusX.AXACS.FileWatcher.csproj", "{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXACS. WindowsConsole.Facade", "WindowsService\GeniusX.AXACS.WindowsConsole.Facade\GeniusX.AXACS. WindowsConsole.Facade.csproj", "{1290621D-2F09-442B-8155-A60825E7575B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXACS.Test", "WindowsService\GeniusX.AXACS.Test\GeniusX.AXACS.Test.csproj", "{21AD4DA2-1783-406F-BAB0-893A96FD2369}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xiap.DataMigration.GeniusInterface.AXACS", "ClaimWakeUpService\Xiap.DataMigration.GeniusInterface\Xiap.DataMigration.GeniusInterface.AXACS.csproj", "{A3012F56-E3C4-4B93-93CF-CD409A86A750}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xiap.DataMigration.GeniusInterface.AXACS.Service", "ClaimWakeUpService\Xiap.DataMigration.GeniusInterface.AXACS.Service\Xiap.DataMigration.GeniusInterface.AXACS.Service.csproj", "{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusX.AXA.FrontendModules.Search", "Search\GeniusX.AXA.FrontendModules.Search\GeniusX.AXA.FrontendModules.Search.csproj", "{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Search", "Search", "{EED75B38-716B-4F11-9369-1857F05CCC1C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 20
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://srv00184:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Claims\\GeniusX.AXA.Claims.BusinessLogic\\GeniusX.AXA.Claims.BusinessLogic.csproj
+		SccProjectTopLevelParentUniqueName1 = GeniusX.AXAModules.sln
+		SccProjectName1 = Claims/GeniusX.AXA.Claims.BusinessLogic
+		SccLocalPath1 = Claims\\GeniusX.AXA.Claims.BusinessLogic
+		SccProjectUniqueName2 = Claims\\GeniusX.AXA.FrontendModules.Claims\\GeniusX.AXA.FrontendModules.Claims.csproj
+		SccProjectTopLevelParentUniqueName2 = GeniusX.AXAModules.sln
+		SccProjectName2 = Claims/GeniusX.AXA.FrontendModules.Claims
+		SccLocalPath2 = Claims\\GeniusX.AXA.FrontendModules.Claims
+		SccProjectUniqueName3 = Claims\\GeniusX.AXA.ClaimsTest\\GeniusX.AXA.ClaimsTest.csproj
+		SccProjectTopLevelParentUniqueName3 = GeniusX.AXAModules.sln
+		SccProjectName3 = Claims/GeniusX.AXA.ClaimsTest
+		SccLocalPath3 = Claims\\GeniusX.AXA.ClaimsTest
+		SccProjectUniqueName4 = Scheduler\\ScheduledTaskClient\\ScheduledTaskClient.csproj
+		SccProjectTopLevelParentUniqueName4 = GeniusX.AXAModules.sln
+		SccProjectName4 = Scheduler/ScheduledTaskClient
+		SccLocalPath4 = Scheduler\\ScheduledTaskClient
+		SccProjectUniqueName5 = Design\u0020Studio\\GeniusX.AXA.DesignStudio.Framework\\GeniusX.AXA.DesignStudio.Framework.csproj
+		SccProjectTopLevelParentUniqueName5 = GeniusX.AXAModules.sln
+		SccProjectName5 = Design\u0020Studio/GeniusX.AXA.DesignStudio.Framework
+		SccLocalPath5 = Design\u0020Studio\\GeniusX.AXA.DesignStudio.Framework
+		SccProjectUniqueName6 = DPService\\GeniusX.AXA.DPService\\GeniusX.AXA.DPService.csproj
+		SccProjectTopLevelParentUniqueName6 = GeniusX.AXAModules.sln
+		SccProjectName6 = DPService/GeniusX.AXA.DPService
+		SccLocalPath6 = DPService\\GeniusX.AXA.DPService
+		SccProjectUniqueName7 = Underwriting\\GeniusX.AXA.FrontendModules.Underwriting\\GeniusX.AXA.FrontendModules.Underwriting.csproj
+		SccProjectTopLevelParentUniqueName7 = GeniusX.AXAModules.sln
+		SccProjectName7 = Underwriting/GeniusX.AXA.FrontendModules.Underwriting
+		SccLocalPath7 = Underwriting\\GeniusX.AXA.FrontendModules.Underwriting
+		SccProjectUniqueName8 = Underwriting\\GeniusX.AXA.Underwriting.BusinessLogic\\GeniusX.AXA.Underwriting.BusinessLogic.csproj
+		SccProjectTopLevelParentUniqueName8 = GeniusX.AXAModules.sln
+		SccProjectName8 = Underwriting/GeniusX.AXA.Underwriting.BusinessLogic
+		SccLocalPath8 = Underwriting\\GeniusX.AXA.Underwriting.BusinessLogic
+		SccProjectUniqueName9 = Underwriting\\GeniusX.AXA.Underwriting.Test\\GeniusX.AXA.Underwriting.Test.csproj
+		SccProjectTopLevelParentUniqueName9 = GeniusX.AXAModules.sln
+		SccProjectName9 = Underwriting/GeniusX.AXA.Underwriting.Test
+		SccLocalPath9 = Underwriting\\GeniusX.AXA.Underwriting.Test
+		SccProjectUniqueName10 = InsuranceDirectory\\GeniusX.AXA.InsuranceDirectory.BusinessLogic\\GeniusX.AXA.InsuranceDirectory.BusinessLogic.csproj
+		SccProjectTopLevelParentUniqueName10 = GeniusX.AXAModules.sln
+		SccProjectName10 = InsuranceDirectory/GeniusX.AXA.InsuranceDirectory.BusinessLogic
+		SccLocalPath10 = InsuranceDirectory\\GeniusX.AXA.InsuranceDirectory.BusinessLogic
+		SccProjectUniqueName11 = InsuranceDirectory\\GeniusX.AXA.InsuranceDirectory.Test\\GeniusX.AXA.InsuranceDirectory.Test.csproj
+		SccProjectTopLevelParentUniqueName11 = GeniusX.AXAModules.sln
+		SccProjectName11 = InsuranceDirectory/GeniusX.AXA.InsuranceDirectory.Test
+		SccLocalPath11 = InsuranceDirectory\\GeniusX.AXA.InsuranceDirectory.Test
+		SccProjectUniqueName12 = InsuranceDirectory\\GeniusX.AXA.FrontendModules.InsuranceDirectory\\GeniusX.AXA.FrontendModules.InsuranceDirectory.csproj
+		SccProjectTopLevelParentUniqueName12 = GeniusX.AXAModules.sln
+		SccProjectName12 = InsuranceDirectory/GeniusX.AXA.FrontendModules.InsuranceDirectory
+		SccLocalPath12 = InsuranceDirectory\\GeniusX.AXA.FrontendModules.InsuranceDirectory
+		SccProjectUniqueName13 = GeniusX.AXA.CustomUI\\GeniusX.AXA.CustomUI.csproj
+		SccProjectTopLevelParentUniqueName13 = GeniusX.AXAModules.sln
+		SccProjectName13 = GeniusX.AXA.CustomUI
+		SccLocalPath13 = GeniusX.AXA.CustomUI
+		SccProjectUniqueName14 = WindowsService\\GeniusX.AXACS.FileWatcher\\GeniusX.AXACS.FileWatcher.csproj
+		SccProjectTopLevelParentUniqueName14 = GeniusX.AXAModules.sln
+		SccProjectName14 = WindowsService/GeniusX.AXACS.FileWatcher
+		SccLocalPath14 = WindowsService\\GeniusX.AXACS.FileWatcher
+		SccProjectUniqueName15 = WindowsService\\GeniusX.AXACS.WindowsConsole.Facade\\GeniusX.AXACS.\u0020WindowsConsole.Facade.csproj
+		SccProjectTopLevelParentUniqueName15 = GeniusX.AXAModules.sln
+		SccProjectName15 = WindowsService/GeniusX.AXACS.WindowsConsole.Facade
+		SccLocalPath15 = WindowsService\\GeniusX.AXACS.WindowsConsole.Facade
+		SccProjectUniqueName16 = WindowsService\\GeniusX.AXACS.Test\\GeniusX.AXACS.Test.csproj
+		SccProjectTopLevelParentUniqueName16 = GeniusX.AXAModules.sln
+		SccProjectName16 = WindowsService/GeniusX.AXACS.Test
+		SccLocalPath16 = WindowsService\\GeniusX.AXACS.Test
+		SccProjectUniqueName17 = ClaimWakeUpService\\Xiap.DataMigration.GeniusInterface\\Xiap.DataMigration.GeniusInterface.AXACS.csproj
+		SccProjectTopLevelParentUniqueName17 = GeniusX.AXAModules.sln
+		SccProjectName17 = ClaimWakeUpService/Xiap.DataMigration.GeniusInterface
+		SccLocalPath17 = ClaimWakeUpService\\Xiap.DataMigration.GeniusInterface
+		SccProjectUniqueName18 = ClaimWakeUpService\\Xiap.DataMigration.GeniusInterface.AXACS.Service\\Xiap.DataMigration.GeniusInterface.AXACS.Service.csproj
+		SccProjectTopLevelParentUniqueName18 = GeniusX.AXAModules.sln
+		SccProjectName18 = ClaimWakeUpService/Xiap.DataMigration.GeniusInterface.AXACS.Service
+		SccLocalPath18 = ClaimWakeUpService\\Xiap.DataMigration.GeniusInterface.AXACS.Service
+		SccProjectUniqueName19 = Search\\GeniusX.AXA.FrontendModules.Search\\GeniusX.AXA.FrontendModules.Search.csproj
+		SccProjectTopLevelParentUniqueName19 = GeniusX.AXAModules.sln
+		SccProjectName19 = Search/GeniusX.AXA.FrontendModules.Search
+		SccLocalPath19 = Search\\GeniusX.AXA.FrontendModules.Search
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = AXACSModule.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8}.Release|x86.ActiveCfg = Release|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1F6678D6-CB93-4988-A510-7E62855952B8}.Release|x86.ActiveCfg = Release|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5}.Release|x86.ActiveCfg = Release|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288}.Release|x86.ActiveCfg = Release|Any CPU
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Debug|Any CPU.Build.0 = Debug|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Debug|x86.ActiveCfg = Debug|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Debug|x86.Build.0 = Debug|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Release|Any CPU.ActiveCfg = Release|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Release|Any CPU.Build.0 = Release|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Release|Mixed Platforms.Build.0 = Release|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Release|x86.ActiveCfg = Release|x86
+		{DC248CA5-6254-4910-8B31-837BE5953E8E}.Release|x86.Build.0 = Release|x86
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987}.Release|x86.ActiveCfg = Release|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB}.Release|x86.ActiveCfg = Release|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{67C0CFEA-5857-4260-81DA-0030F14441C5}.Release|x86.ActiveCfg = Release|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F}.Release|x86.ActiveCfg = Release|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5F5CBFA0-221F-4119-A317-733EE3776622}.Release|x86.ActiveCfg = Release|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31}.Release|x86.ActiveCfg = Release|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3}.Release|x86.ActiveCfg = Release|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C}.Release|x86.ActiveCfg = Release|Any CPU
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Debug|x86.ActiveCfg = Debug|x86
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Debug|x86.Build.0 = Debug|x86
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Release|Any CPU.ActiveCfg = Release|x86
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Release|Mixed Platforms.Build.0 = Release|x86
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Release|x86.ActiveCfg = Release|x86
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32}.Release|x86.Build.0 = Release|x86
+		{1290621D-2F09-442B-8155-A60825E7575B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1290621D-2F09-442B-8155-A60825E7575B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1290621D-2F09-442B-8155-A60825E7575B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1290621D-2F09-442B-8155-A60825E7575B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1290621D-2F09-442B-8155-A60825E7575B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1290621D-2F09-442B-8155-A60825E7575B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1290621D-2F09-442B-8155-A60825E7575B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1290621D-2F09-442B-8155-A60825E7575B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1290621D-2F09-442B-8155-A60825E7575B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1290621D-2F09-442B-8155-A60825E7575B}.Release|x86.ActiveCfg = Release|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369}.Release|x86.ActiveCfg = Release|Any CPU
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Debug|x86.ActiveCfg = Debug|x86
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Debug|x86.Build.0 = Debug|x86
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Release|Any CPU.ActiveCfg = Release|x86
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Release|x86.ActiveCfg = Release|x86
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750}.Release|x86.Build.0 = Release|x86
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7}.Release|x86.ActiveCfg = Release|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CD6FAEA1-1F53-40AA-A43D-BCBA2A08B3DF} = {E71ABE42-89D0-4BE5-A1F4-92F7908E6A89}
+		{C12F84EA-5F48-4F0F-87AD-25BEBC4B42D6} = {E71ABE42-89D0-4BE5-A1F4-92F7908E6A89}
+		{D8052F89-B1D3-4CE4-9715-1161B5AAD3AC} = {E71ABE42-89D0-4BE5-A1F4-92F7908E6A89}
+		{77E5E967-B945-4AF8-BF8C-77F87DD7C9FE} = {E71ABE42-89D0-4BE5-A1F4-92F7908E6A89}
+		{9B7C0203-6FE4-416B-829A-7BE5632462E3} = {E71ABE42-89D0-4BE5-A1F4-92F7908E6A89}
+		{ADD9F0CD-08BA-4344-947B-EE178BE23DA5} = {E71ABE42-89D0-4BE5-A1F4-92F7908E6A89}
+		{551BDCF2-F222-40D9-B98C-E80F00EED0D8} = {22294415-17E8-458D-8E58-E47142E7A2B5}
+		{E1D92090-E7CB-4276-B659-8B15B45DC7D5} = {22294415-17E8-458D-8E58-E47142E7A2B5}
+		{4AD5E587-40AD-45F0-969D-CFA4FA0F7288} = {22294415-17E8-458D-8E58-E47142E7A2B5}
+		{1F6678D6-CB93-4988-A510-7E62855952B8} = {D336D722-7658-4399-95A7-509C1A173CF1}
+		{67C0CFEA-5857-4260-81DA-0030F14441C5} = {D336D722-7658-4399-95A7-509C1A173CF1}
+		{7D816E06-5303-47DA-91B3-B6DCEA66075F} = {D336D722-7658-4399-95A7-509C1A173CF1}
+		{DC248CA5-6254-4910-8B31-837BE5953E8E} = {7DA04596-17C8-4847-976D-06709E914264}
+		{AC79C6E6-C2B1-4C3E-B5B9-FA6F81F76987} = {9E3ADC21-681D-41B5-918B-555F282E299A}
+		{5F5CBFA0-221F-4119-A317-733EE3776622} = {108B3D97-0C8A-4D43-9FCB-54C7B57C4471}
+		{D0B3637A-71BB-4B38-9ACB-B20E4B54BD31} = {108B3D97-0C8A-4D43-9FCB-54C7B57C4471}
+		{6C033982-0E0B-4140-8387-73F51B4FF5B3} = {108B3D97-0C8A-4D43-9FCB-54C7B57C4471}
+		{83FBD4B0-82B5-456E-96E6-297E83318FDB} = {0659DE52-F555-4E1F-9D95-74903D738FD1}
+		{D328DB94-3A6C-451F-B6F0-00360F3A8F7C} = {2098369C-9A51-480A-9688-77D32DD20101}
+		{BB41A2E0-FEAC-49AC-B93C-8BA81D469E32} = {754F2B14-1A37-4813-B78F-C977E7B8D40B}
+		{1290621D-2F09-442B-8155-A60825E7575B} = {754F2B14-1A37-4813-B78F-C977E7B8D40B}
+		{21AD4DA2-1783-406F-BAB0-893A96FD2369} = {754F2B14-1A37-4813-B78F-C977E7B8D40B}
+		{A3012F56-E3C4-4B93-93CF-CD409A86A750} = {B2003D99-166B-42EF-A73B-96AA5A30800C}
+		{6FF37A12-32FB-41F3-83CE-B8E0933FD3D7} = {B2003D99-166B-42EF-A73B-96AA5A30800C}
+		{CBBA519C-CC3E-46AC-B8FE-2D35B567E524} = {EED75B38-716B-4F11-9369-1857F05CCC1C}
+	EndGlobalSection
+EndGlobal

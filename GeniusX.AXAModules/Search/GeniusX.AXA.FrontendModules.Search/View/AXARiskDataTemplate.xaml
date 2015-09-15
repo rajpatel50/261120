@@ -1,0 +1,163 @@
+﻿<UserControl x:Class="GeniusX.AXA.FrontendModules.Search.View.AXARiskDataTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:coreControls="clr-namespace:XIAP.Frontend.CoreControls;assembly=XIAP.Frontend.CoreControls"
+    xmlns:xiap_Common="clr-namespace:XIAP.FrontendModules.Common;assembly=XIAP.FrontendModules.Common"  
+    xmlns:resources="clr-namespace:XIAP.FrontendModules.Search.Resources"          
+    xmlns:ca="clr-namespace:ComponentArt.Silverlight.UI.Navigation;assembly=ComponentArt.Silverlight.UI.Navigation" 
+    xmlns:localViews="clr-namespace:XIAP.FrontendModules.Search.View;assembly=XIAP.FrontendModules.Search"
+    xmlns:XIAP_Frontend_Controls="clr-namespace:XIAP.Frontend.Controls;assembly=XIAP.Frontend.Controls"
+    xmlns:markupExt="clr-namespace:XIAP.Frontend.Infrastructure.BusinessTerms;assembly=XIAP.Frontend.Infrastructure"
+    xmlns:caData="clr-namespace:ComponentArt.Silverlight.UI.Data;assembly=ComponentArt.Silverlight.UI.Data"           
+    xmlns:cartCommon="clr-namespace:ComponentArt.Silverlight.UI;assembly=ComponentArt.Silverlight.UI.Common">
+
+  <UserControl.Resources>
+    <!--<resources:StringResources x:Key="StringResources" />
+
+    <Style x:Key="headerStyle"
+               TargetType="TextBlock">
+      <Setter Property="FontWeight"
+                    Value="Bold" />
+      <Setter Property="FontSize"
+                    Value="12" />
+      <Setter Property="FontFamily"
+                    Value="Arial" />
+      <Setter Property="Foreground"
+                    Value="#FF000000" />
+      <Setter Property="VerticalAlignment"
+                    Value="Center" />
+      <Setter Property="Margin"
+                    Value="0,0,15,0" />
+    </Style>
+
+    <Style x:Key="resultStyle"
+               TargetType="TextBlock">
+      <Setter Property="FontWeight"
+                    Value="Normal" />
+      <Setter Property="FontFamily"
+                    Value="Arial" />
+      <Setter Property="FontSize"
+                    Value="11" />
+      <Setter Property="Foreground"
+                    Value="#003399" />
+      <Setter Property="VerticalAlignment"
+                    Value="Center" />
+    </Style>-->
+
+    <xiap_Common:DateFormatConverter x:Key="DateConverter" />
+
+    <DataTemplate x:Name="AXARiskTemplate">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="430" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <!-- Page Title -->
+          <RowDefinition Height="*"/>
+          <!-- Page Content -->
+        </Grid.RowDefinitions>
+        <coreControls:XIAPSearchResultGrid Grid.Row="1" x:Name="RiskSearchResultGrid" 
+                                               BorderThickness="1,1,1,1"
+                                               VerticalAlignment="Stretch"
+                                               HorizontalAlignment="Stretch"
+                                               VerticalScrollBarVisibility="Auto"
+                                               Theme="{StaticResource dataGrid}"
+                                               ResultCount="{Binding TotalRows}"
+                                               ItemsSource="{Binding GlobalSearchRows}"
+                                               RunningMode="Callback" 
+											   AutoAdjustPageSize="True"
+                                              >
+          <coreControls:XIAPSearchResultGrid.Columns>
+            <caData:DataGridTemplateColumn Binding="{Binding SearchRow.HeaderReference}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey=RiskGridHeader_Reference,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.HeaderTitle}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey=RiskGridHeader_Title,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.RiskReference}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey=RiskGridHeader_RiskReference,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.RiskRenewalReference}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey=RiskGridHeader_RiskRenewlReference,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding SearchRow.Insured}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey=RiskGridHeader_Insured,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.Broker}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey= RiskGridHeader_Broker,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.ClassificationCodeDescription}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey=RiskGridHeader_Classification,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.AreaCodeDescription}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey=RiskGridHeader_Area,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.ReceivedDate}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey= RiskGridHeader_ReceivedDate,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.InceptionDate}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey= RiskGridHeader_InceptionDate,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.ExpiryDate}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey= RiskGridHeader_ExpiryDate,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+            <caData:DataGridTemplateColumn Binding="{Binding Path=SearchRow.Status}"
+                                                   Width="*">
+              <caData:DataGridTemplateColumn.Header>
+                <TextBlock Text="{markupExt:Resourcex ResxKey= RiskGridHeader_Status,ResxType=search}"></TextBlock>
+              </caData:DataGridTemplateColumn.Header>
+            </caData:DataGridTemplateColumn>
+          </coreControls:XIAPSearchResultGrid.Columns>
+        </coreControls:XIAPSearchResultGrid>
+        <coreControls:XIAPSplitter x:Name="VerticalSplitter" 
+                                                       IsSplitterCollapsed="{Binding IsPreviewCollapsed, Mode=TwoWay}"
+                                                       Theme="{StaticResource splitter}"
+                                                       ShowsPreview="False"
+                                                       CollapseDirection="Right"
+                                                       Grid.Column="1" Grid.Row="1" />
+        <localViews:SearchResultPreview x:Name="preview" Grid.Column="2" Grid.Row="1" ScrollToTop="{Binding ScrollToTop,Mode=TwoWay}"/>
+        <XIAP_Frontend_Controls:CustomDataLoadingVisual  Grid.Row="0" Cursor="Wait" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsBusy="{Binding IsBusy}" Visibility="Collapsed">
+          <XIAP_Frontend_Controls:CustomDataLoadingVisual.BorderBackground>
+            <SolidColorBrush Color="White" Opacity="0.4" />
+          </XIAP_Frontend_Controls:CustomDataLoadingVisual.BorderBackground>
+        </XIAP_Frontend_Controls:CustomDataLoadingVisual>
+      </Grid>
+    </DataTemplate>
+  </UserControl.Resources>
+</UserControl>

@@ -1,0 +1,253 @@
+﻿<dm:ComponentPathConfig xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:dm="clr-namespace:XIAP.Frontend.Infrastructure.DataMapping.ComponentPathConfig;assembly=XIAP.Frontend.Infrastructure">
+    <dm:ComponentPathConfig.FunctionalAreaSettings>
+        <dm:FunctionalArea Name="UW" >
+            <dm:FunctionalArea.Components>
+                <dm:ComponentType Name="Header" >
+                    <dm:ComponentType.ComponentProperties>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="HeaderVersion" RelaxedModePrefix="HeaderVersionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="HeaderVersionData"  Name="IsLatestVersion"/>
+                        <dm:Property Prefix="HeaderVersionData"  Name="VersionStartDate"/>
+                        <dm:Property Prefix="HeaderVersionData"  Name="VersionEndDate"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="Section" RelaxedModePrefix="SectionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="SectionData"  Name="SectionTypeCode" />
+                        <dm:Property Prefix="SectionData"  Name="SubSectionTypeCode"/>
+                        <dm:Property Prefix="SectionVersionData"  Name="SectionStartDate"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="SectionVersion" RelaxedModePrefix="SectionVersionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="SectionVersionData"  Name="IsLatestVersion"/>
+                        <dm:Property Prefix="SectionVersionData"  Name="VersionStartDate"/>
+                        <dm:Property Prefix="SectionVersionData"  Name="VersionEndDate"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="SectionDetail" RelaxedModePrefix="SectionDetailData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="SectionDetailData"  Name="SectionDetailReference"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="SectionDetailVersion" RelaxedModePrefix="SectionDetailVersionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="SectionDetailVersionData"  Name="IsLatestVersion"/>
+                        <dm:Property Prefix="SectionDetailVersionData"  Name="VersionStartDate"/>
+                        <dm:Property Prefix="SectionDetailVersionData"  Name="VersionEndDate"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="Coverage" RelaxedModePrefix="CoverageData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="CoverageData"  Name="CoverageTypeCode"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="CoverageVersion" RelaxedModePrefix="CoverageVersionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="CoverageVersionData"  Name="IsLatestVersion"/>
+                        <dm:Property Prefix="CoverageVersionData"  Name="CustomCode20" />
+                        <dm:Property Prefix="CoverageVersionData"  Name="VersionStartDate"/>
+                        <dm:Property Prefix="CoverageVersionData"  Name="VersionEndDate"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="ParticipationGroup" >
+                    <dm:ComponentType.ComponentProperties/>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="ParticipationGroupVersion" RelaxedModePrefix="ParticipationGroupVersionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="ParticipationGroupVersionData"  Name="IsLatestVersion"/>
+                        <dm:Property Prefix="ParticipationGroupVersionData"  Name="VersionStartDate"/>
+                        <dm:Property Prefix="ParticipationGroupVersionData"  Name="VersionEndDate"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="Participation" RelaxedModePrefix="ParticipationData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="ParticipationData"  Name="CustomCode04"/>
+                        <dm:Property Prefix="ParticipationData"  Name="CustomCode05"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="UwNameInvolvement" RelaxedModePrefix="UwNameInvolvementData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="UwNameInvolvementData" Name="NameInvolvementType" />
+                        <dm:Property Prefix="UwNameInvolvementData" Name="UwNameInvolvementID" />
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="UwNameInvolvementVersion" RelaxedModePrefix="UwNameInvolvementVersionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="UwNameInvolvementVersionData"  Name="IsLatestVersion"/>
+                        <dm:Property Prefix="UwNameInvolvementVersionData"  Name="VersionStartDate"/>
+                        <dm:Property Prefix="UwNameInvolvementVersionData"  Name="VersionEndDate"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="DeductionGroup" RelaxedModePrefix="DeductionGroupData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="DeductionGroupData"  Name="ProductDeductionGroupID"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="DeductionGroupVersion" RelaxedModePrefix="DeductionGroupVersionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="DeductionGroupVersionData"  Name="IsLatestVersion"/>
+                        <dm:Property Prefix="DeductionGroupVersionData"  Name="VersionStartDate"/>
+                        <dm:Property Prefix="DeductionGroupVersionData"  Name="VersionEndDate"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="Deduction" RelaxedModePrefix="DeductionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="DeductionData"  Name="DeductionCode"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+
+                <dm:ComponentType Name="UwGenericDataSet" RelaxedModePrefix="GenericDataSetData">
+                    <dm:ComponentType.ComponentProperties/>
+                </dm:ComponentType>
+                <dm:ComponentType Name="UwGenericDataItem" RelaxedModePrefix="GenericDataItemData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="GenericDataItemData"  Name="GenericDataTypeCode"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="Terms" RelaxedModePrefix="TermsData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="TermsData"  Name="TermsReference"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="TermsVersion" RelaxedModePrefix="TermsVersionData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="TermsVersionData"  Name="IsLatestVersion"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ParticipationGroupSectionLink">
+                    <dm:ComponentType.ComponentProperties>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+            </dm:FunctionalArea.Components>
+            <dm:FunctionalArea.ComponentMappings>
+                <dm:ComponentMapping From="Header" To="HeaderVersion" />
+                <dm:ComponentMapping From="Header" To="Section" />
+                <dm:ComponentMapping From="Header" To="DeductionGroup" />
+                <dm:ComponentMapping From="Header" To="ParticipationGroup" />
+                <dm:ComponentMapping From="Header" To="UwNameInvolvement" />
+                <dm:ComponentMapping From="Header" To="Terms" Alias="Term" />
+                <dm:ComponentMapping From="Terms" To="TermsVersion" />
+                <dm:ComponentMapping From="HeaderVersion" To="UwGenericDataSet" Alias="GenericDataSet" />
+                <dm:ComponentMapping From="UwGenericDataSet" To="UwGenericDataItem" Alias="GenericDataItems" />
+                <dm:ComponentMapping From="Section" To="SectionDetail" />
+                <dm:ComponentMapping From="Section" To="SectionVersion" />
+                <dm:ComponentMapping From="Section" To="Header" />
+                <dm:ComponentMapping From="SectionDetail" To="SectionDetailVersion" />
+                <dm:ComponentMapping From="SectionDetailVersion" To="UwGenericDataSet" Alias="GenericDataSet" />
+                <dm:ComponentMapping From="SectionDetail" To="Coverage" />
+                <dm:ComponentMapping From="SectionDetail" To="Section" />
+                <dm:ComponentMapping From="SectionDetail" To="ParticipationGroupSectionLink" />
+                <dm:ComponentMapping From="ParticipationGroupSectionLink" To="ParticipationGroup" />
+                <dm:ComponentMapping From="Coverage" To="CoverageVersion" />
+                <dm:ComponentMapping From="Coverage" To="SectionDetail" />
+                <dm:ComponentMapping From="CoverageVersion" To="DeductionGroup" />
+                <dm:ComponentMapping From="CoverageVersion" To="UwGenericDataSet" Alias="GenericDataSet"/>
+                <dm:ComponentMapping From="DeductionGroup" To="DeductionGroupVersion" />
+                <dm:ComponentMapping From="ParticipationGroup" To="ParticipationGroupVersion" />
+                <dm:ComponentMapping From="ParticipationGroupVersion" To="Participation" />
+                <dm:ComponentMapping From="DeductionGroupVersion" To="Deduction" />
+                <dm:ComponentMapping From="UwNameInvolvement" To="UwNameInvolvementVersion" />
+            </dm:FunctionalArea.ComponentMappings>
+        </dm:FunctionalArea>
+
+        <dm:FunctionalArea Name="Claim">
+            <dm:FunctionalArea.Components>
+                <dm:ComponentType Name="ClaimHeader">
+                    <dm:ComponentType.ComponentProperties>
+
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimDetail" RelaxedModePrefix="ClaimDetailData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="ClaimDetailData"  Name="ClaimDetailReference"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimLitigation" >
+                    <dm:ComponentType.ComponentProperties/>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimInvolvement" RelaxedModePrefix="ClaimInvolvementData">
+                    <dm:ComponentType.ComponentProperties>                     
+                        <dm:Property Prefix="ClaimInvolvementData"  Name="ClaimInvolvementType"/>
+                    </dm:ComponentType.ComponentProperties> 
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimNameInvolvement" RelaxedModePrefix="ClaimNameInvolvementData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="ClaimNameInvolvementData"  Name="NameUsageTypeCode"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimRecovery" >
+                    <dm:ComponentType.ComponentProperties/>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimEvent" RelaxedModePrefix="EventData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="EventData"  Name="EventDate"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimDetailToClaimInvolvementLink" >
+                    <dm:ComponentType.ComponentProperties>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimInsuredObject" RelaxedModePrefix="ClaimInsuredObjectData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="ClaimInsuredObjectData" Name="InternalIOType" />
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimIOVehicle" RelaxedModePrefix="ClaimIOVehicleData">
+                    <dm:ComponentType.ComponentProperties>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimIODriver" RelaxedModePrefix="ClaimIODriverData">
+                    <dm:ComponentType.ComponentProperties>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimGenericDataSet" RelaxedModePrefix="GenericDataSetData">
+                    <dm:ComponentType.ComponentProperties/>
+                </dm:ComponentType>
+                <dm:ComponentType Name="ClaimGenericDataItem" RelaxedModePrefix="GenericDataItemData">
+                    <dm:ComponentType.ComponentProperties>
+                        <dm:Property Prefix="GenericDataItemData"  Name="GenericDataTypeCode"/>
+						<dm:Property Prefix="GenericDataItemData"  Name="CustomBoolean01"/>
+                    </dm:ComponentType.ComponentProperties>
+                </dm:ComponentType>
+            </dm:FunctionalArea.Components>
+            <dm:FunctionalArea.ComponentMappings>
+                <dm:ComponentMapping From="ClaimHeader" To="ClaimDetail" Alias="ClaimDetails"/>
+                <dm:ComponentMapping From="ClaimHeader" To="ClaimEvent" Alias="ClaimEvents"/>
+                <dm:ComponentMapping From="ClaimHeader" To="ClaimInvolvement" />
+                <dm:ComponentMapping From="ClaimHeader" To="ClaimGenericDataSet" Alias="GenericDataSet" />
+                <dm:ComponentMapping From="ClaimInvolvement" To="ClaimNameInvolvement" />
+                <dm:ComponentMapping From="ClaimInvolvement" To="ClaimLitigation" />
+                <dm:ComponentMapping From="ClaimInvolvement" To="ClaimInsuredObject" />
+                <dm:ComponentMapping From="ClaimDetail" To="ClaimDetailToClaimInvolvementLink" />
+                <dm:ComponentMapping From="ClaimDetailToClaimInvolvementLink" To="ClaimInvolvement" />
+                <dm:ComponentMapping From="ClaimInsuredObject" To="ClaimIOVehicle" />
+                <dm:ComponentMapping From="ClaimInsuredObject" To="ClaimIODriver" />
+				<dm:ComponentMapping From="ClaimDetail" To="ClaimGenericDataSet" Alias="GenericDataSet" />
+                <dm:ComponentMapping From="ClaimGenericDataSet" To="ClaimGenericDataItem" Alias="GenericDataItems" />
+            </dm:FunctionalArea.ComponentMappings>
+        </dm:FunctionalArea>
+    </dm:ComponentPathConfig.FunctionalAreaSettings>
+    <dm:ComponentPathConfig.GlobalPropertyExclude>
+        <dm:Property Name="Guid" />
+        <dm:Property Name="ProcessHandlingEnabled" />
+        <dm:Property Name="IsNew" />
+        <dm:Property Name="IsDeleted" />
+        <dm:Property Name="IsEditable" />
+        <dm:Property Name="HasChanged" />
+        <dm:Property Name="ValidationDate" />
+        <dm:Property Name="DataId" />
+    </dm:ComponentPathConfig.GlobalPropertyExclude>
+</dm:ComponentPathConfig>

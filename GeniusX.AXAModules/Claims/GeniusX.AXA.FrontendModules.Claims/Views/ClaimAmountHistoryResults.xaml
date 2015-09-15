@@ -1,0 +1,672 @@
+﻿<CoreControls:XIAPPanelBase x:Class="GeniusX.AXA.FrontendModules.Claims.Views.ClaimAmountHistoryResults"
+                            xmlns:CoreControls="clr-namespace:XIAP.Frontend.CoreControls;assembly=XIAP.Frontend.CoreControls"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Commands;assembly=Microsoft.Practices.Prism"
+                            xmlns:GroupBox="clr-namespace:Groupbox;assembly=Groupbox"
+                            xmlns:caData="clr-namespace:ComponentArt.Silverlight.UI.Data;assembly=ComponentArt.Silverlight.UI.Data"
+                            xmlns:dataTemplateSelector="clr-namespace:XIAP.Frontend.CoreControls.DataTemplateSelector;assembly=XIAP.Frontend.CoreControls"
+                            xmlns:ccdts="clr-namespace:XIAP.Frontend.CoreControls.DataTemplateSelector;assembly=XIAP.Frontend.CoreControls"
+                            xmlns:validation="clr-namespace:XIAP.Validation;assembly=XIAP.Validation"
+                            xmlns:binding="clr-namespace:XIAP.Frontend.Infrastructure.Behaviors;assembly=XIAP.Frontend.Infrastructure"
+                            xmlns:XIAP_Common="clr-namespace:XIAP.FrontendModules.Common;assembly=XIAP.FrontendModules.Common"
+                            xmlns:Res="clr-namespace:XIAP.FrontendModules.Claims.Resources;assembly=XIAP.FrontendModules.Claims">
+
+    <CoreControls:XIAPPanelBase.Resources>
+        <Res:StringResources x:Key="StringResources" />
+        <XIAP_Common:DateFormatConverter x:Key="DateConverter" />
+        <DataTemplate x:Key="TransactionsTemplate">
+            <CoreControls:XIAPSearchResultGrid Grid.Row="1"
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Stretch"
+                                               AllowSorting="True"
+                                               AllowGrouping="False"
+                                               AllowPaging="True"
+                                               AutoAdjustPageSize="False"
+                                               ShowColumnFilters="True"
+                                               ColumnResizingMode="Normal"
+                                               HorizontalScrollBarVisibility="Auto"
+                                               VerticalScrollBarVisibility="Auto"
+                                               PageSize="13"
+                                               x:Name="claimAmountHistoryXIAPGrid"
+                                               SelectedItem="{Binding SelectedClaimTransactionAmountRow,Mode=TwoWay}"
+                                               Theme="{StaticResource dataGrid}"
+                                               ItemsSource="{Binding ClaimAmountSearchRows}"
+                                               ResultCount="{Binding Path=ClaimAmountSearchRows.Count}"
+                                               RunningMode="Client"
+                                               FooterVisibility="Visible"
+                                               Width="890"
+                                               RowLoaded="ClaimAmountHistoryXIAPGrid_RowLoaded"
+                                               Height="310">
+                <CoreControls:XIAPSearchResultGrid.Columns>
+
+                    <!-- Transaction Date -->
+                    <caData:DataGridTemplateColumn Width="85"
+                                                   Binding="{Binding TransactionDate, Converter={StaticResource DateConverter}, ConverterParameter=\{0:d\}}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_TransactionDate}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Reserve Movement -->
+                    <caData:DataGridTemplateColumn Binding="{Binding}"
+                                                   x:Name="ReserveAmount"
+                                                   ColumnName="ReserveAmount"
+                                                   Width="124"
+                                                   DefaultSortDirection="Ascending"
+                                                   AllowSorting="True"
+                                                   ShowFilter="True"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}"
+                                                   CellStyle="{StaticResource RightAlign}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_ReserveMovement}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                        <caData:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ReserveAmount}"
+                                           HorizontalAlignment="Left"
+                                           Style="{StaticResource DataGridContentTextBlock}">
+                                </TextBlock>
+                            </DataTemplate>
+                        </caData:DataGridTemplateColumn.CellTemplate>
+                    </caData:DataGridTemplateColumn>
+                    
+                    <!-- PaymentReceipt Amount -->
+                    <caData:DataGridTemplateColumn Binding="{Binding}"
+                                                   x:Name="PaymentReceiptAmount"
+                                                   ColumnName="PaymentReceiptAmount"
+                                                   Width="124"
+                                                   DefaultSortDirection="Ascending"
+                                                   AllowSorting="True"
+                                                   ShowFilter="True"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}"
+                                                   CellStyle="{StaticResource RightAlign}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_PaymentReceiptAmount}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                        <caData:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PaymentReceiptAmount}"
+                                           HorizontalAlignment="Left"
+                                           Style="{StaticResource DataGridContentTextBlock}">
+                                </TextBlock>
+                            </DataTemplate>
+                        </caData:DataGridTemplateColumn.CellTemplate>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Payee Name -->
+                    <caData:DataGridTemplateColumn x:Name="PayeeName"
+                                                   ColumnName="PayeeName"
+                                                   Width="115"
+                                                   Binding="{Binding PayeeName}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_PayeeName}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Payment Custom Reference -->
+                    <caData:DataGridTemplateColumn x:Name="PaymentCustomReference"
+                                                   ColumnName="PaymentCustomReference"
+                                                   Width="115"
+                                                   Binding="{Binding PaymentCustomReference}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_PaymentCustomReference}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Authorisation Status -->
+                    <caData:DataGridTemplateColumn Width="124"
+                                                   Binding="{Binding AuthorisationStatus}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_AuthorisationStatus}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Payment Status -->
+                    <caData:DataGridTemplateColumn x:Name="PaymentStatus"
+                                                   ColumnName="PaymentStatus"
+                                                   Width="80"
+                                                   Binding="{Binding PaymentStatusDescription}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_PaymentStatus}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Description -->
+                    <caData:DataGridTemplateColumn Width="105"
+                                                   Binding="{Binding ClaimTransactionDescription}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Description}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>                                      
+                   
+                    <!-- Source -->
+                    <caData:DataGridTemplateColumn Width="120"
+                                                   Binding="{Binding ClaimTransactionSourceDescription}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Source}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Original Currency -->
+                    <caData:DataGridTemplateColumn Width="60"
+                                                   Binding="{Binding OriginalCurrencyCode}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_OriginalCurrency}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Account Currency -->
+                    <caData:DataGridTemplateColumn Width="70"
+                                                   Binding="{Binding AccountingCurrencyCode}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_AccountCurrency}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Multiple Claim Details -->
+                    <caData:DataGridTemplateColumn Width="80"
+                                                   Binding="{Binding MultipleClaimDetails}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_MultipleClaimDetails}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+                    
+                    <!-- Reference -->
+                    <caData:DataGridTemplateColumn Width="105"
+                                                   Binding="{Binding ClaimTransactionHeaderReference}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Reference}"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+                    
+                </CoreControls:XIAPSearchResultGrid.Columns>
+            </CoreControls:XIAPSearchResultGrid>
+        </DataTemplate>
+        <DataTemplate x:Key="ClaimDetailsTemplate">
+            <CoreControls:XIAPSearchResultGrid Grid.Row="1"
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Stretch"
+                                               AllowSorting="True"
+                                               AllowGrouping="False"
+                                               AllowPaging="True"
+                                               AutoAdjustPageSize="False"
+                                               ShowColumnFilters="True"
+                                               ColumnResizingMode="Normal"
+                                               HorizontalScrollBarVisibility="Auto"
+                                               VerticalScrollBarVisibility="Auto"
+                                               PageSize="13"
+                                               x:Name="claimAmountHistoryXIAPGrid"
+                                               SelectedItem="{Binding SelectedClaimTransactionAmountRow,Mode=TwoWay}"
+                                               Theme="{StaticResource dataGrid}"
+                                               ItemsSource="{Binding ClaimAmountSearchRows}"
+                                               ResultCount="{Binding Path=ClaimAmountSearchRows.Count}"
+                                               RunningMode="Client"
+                                               FooterVisibility="Visible"
+                                               Width="890"
+                                               RowLoaded="ClaimAmountHistoryXIAPGrid_RowLoaded"
+                                               Height="310">
+                <CoreControls:XIAPSearchResultGrid.Columns>
+                    
+                    <!-- Transaction Date -->
+                    <caData:DataGridTemplateColumn  Width="85"
+                                                    Binding="{Binding TransactionDate, Converter={StaticResource DateConverter}, ConverterParameter=\{0:d\}}"
+                                                    HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_TransactionDate}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>                                       
+
+                    <!-- Reserve Amount -->
+                    <caData:DataGridTemplateColumn Binding="{Binding ReserveAmount}"
+                                                   x:Name="ReserveAmount"
+                                                   ColumnName="ReserveAmount"
+                                                   Width="124"
+                                                   DefaultSortDirection="Ascending"
+                                                   AllowSorting="True"
+                                                   ShowFilter="True"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}"
+                                                   CellStyle="{StaticResource RightAlign}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_ReserveMovement}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- PaymentReceipt Amount -->
+                    <caData:DataGridTemplateColumn Binding="{Binding PaymentReceiptAmount}"
+                                                   x:Name="PaymentReceiptAmount"
+                                                   ColumnName="PaymentReceiptAmount"
+                                                   Width="124"
+                                                   DefaultSortDirection="Ascending"
+                                                   AllowSorting="True"
+                                                   ShowFilter="True"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}"
+                                                   CellStyle="{StaticResource RightAlign}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_PaymentReceiptAmount}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Payee Name -->
+                    <caData:DataGridTemplateColumn x:Name="PayeeName"
+                                                   ColumnName="PayeeName"
+                                                   Width="115"
+                                                   Binding="{Binding PayeeName}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_PayeeName}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+                    
+                    <!-- Description -->
+                    <caData:DataGridTemplateColumn  Width="105"
+                                                    Binding="{Binding ClaimTransactionDescription}"
+                                                    HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Description}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Authorisation Status -->
+                    <caData:DataGridTemplateColumn Width="124"
+                                                   Binding="{Binding AuthorisationStatus}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_AuthorisationStatus}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Claim Detail -->
+                    <caData:DataGridTemplateColumn Width="115"
+                                                   Binding="{Binding ClaimDetailTitle}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_ClaimDetail}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Original Currency -->
+                    <caData:DataGridTemplateColumn Width="60"
+                                                   Binding="{Binding OriginalCurrencyCode}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_OriginalCurrency}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Source -->
+                    <caData:DataGridTemplateColumn Width="120"
+                                                   Binding="{Binding ClaimTransactionSourceDescription}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Source}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Payment Status -->
+                    <caData:DataGridTemplateColumn x:Name="PaymentStatus"
+                                                   ColumnName="PaymentStatus"
+                                                   Width="80"
+                                                   Binding="{Binding PaymentStatusDescription}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_PaymentStatus}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+                    
+                    <!-- Claim Detail Type -->
+                    <caData:DataGridTemplateColumn Width="80"
+                                                   Binding="{Binding ClaimDetailTypeCode}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_ClmDtlType}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Claim Detail Reference -->
+                    <caData:DataGridTemplateColumn Width="70"
+                                                   Binding="{Binding ClaimDetailReference}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_ClmDtlRef}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+                                     
+                    <!-- Account Currency -->
+                    <caData:DataGridTemplateColumn Width="70"
+                                                   Binding="{Binding AccountingCurrencyCode}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_AccountCurrency}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Reference -->
+                    <caData:DataGridTemplateColumn  Width="105"
+                                                    Binding="{Binding ClaimTransactionHeaderReference}"
+                                                    HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Reference}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Payment Custom Reference -->
+                    <caData:DataGridTemplateColumn x:Name="PaymentCustomReference"
+                                                   ColumnName="PaymentCustomReference"
+                                                   Width="115"
+                                                   Binding="{Binding PaymentCustomReference}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_PaymentCustomReference}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+                                                      
+                    <!-- Multiple Claim Details -->
+                    <caData:DataGridTemplateColumn Width="80"
+                                                   Binding="{Binding MultipleClaimDetails}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_MultipleClaimDetails}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Claim Detail Incurred Position -->
+                    <caData:DataGridTemplateColumn Binding="{Binding IncurredAmount}"
+                                                   x:Name="IncurredAmount"
+                                                   ColumnName="IncurredAmount"
+                                                   Width="124"
+                                                   DefaultSortDirection="Ascending"
+                                                   AllowSorting="True"
+                                                   ShowFilter="True"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}"
+                                                   CellStyle="{StaticResource RightAlign}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_ClaimDetailIncurredPosition}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+
+
+
+                </CoreControls:XIAPSearchResultGrid.Columns>
+            </CoreControls:XIAPSearchResultGrid>
+        </DataTemplate>
+        <DataTemplate x:Key="AmountsTemplate">
+            <CoreControls:XIAPSearchResultGrid Grid.Row="1"
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Stretch"
+                                               AllowSorting="True"
+                                               AllowGrouping="False"
+                                               AllowPaging="True"
+                                               AutoAdjustPageSize="False"
+                                               ShowColumnFilters="True"
+                                               ColumnResizingMode="Normal"
+                                               HorizontalScrollBarVisibility="Auto"
+                                               VerticalScrollBarVisibility="Auto"
+                                               PageSize="13"
+                                               x:Name="claimAmountHistoryXIAPGrid"
+                                               SelectedItem="{Binding SelectedClaimTransactionAmountRow,Mode=TwoWay}"
+                                               Theme="{StaticResource dataGrid}"
+                                               ItemsSource="{Binding ClaimAmountSearchRows}"
+                                               ResultCount="{Binding Path=ClaimAmountSearchRows.Count}"
+                                               RunningMode="Client"
+                                               FooterVisibility="Visible"
+                                               Width="890"
+                                               RowLoaded="ClaimAmountHistoryXIAPGrid_RowLoaded"
+                                               Height="310">
+                <CoreControls:XIAPSearchResultGrid.Columns>
+
+                    <!-- Transaction Date -->
+                    <caData:DataGridTemplateColumn Width="85"
+                                                   Binding="{Binding TransactionDate, Converter={StaticResource DateConverter}, ConverterParameter=\{0:d\}}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_TransactionDate}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Transaction Amount -->
+                    <caData:DataGridTemplateColumn x:Name="TransactionAmount"
+                                                   Binding="{Binding TransactionAmount}"
+                                                   ColumnName="TransactionAmount"
+                                                   Width="124"
+                                                   DefaultSortDirection="Ascending"
+                                                   AllowSorting="True"
+                                                   ShowFilter="True"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}"
+                                                   CellStyle="{StaticResource RightAlign}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Amount}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Movement Amount -->
+                    <caData:DataGridTemplateColumn x:Name="MovementAmount"
+                                                   Binding="{Binding MovementAmount}"
+                                                   ColumnName="MovementAmount"
+                                                   Width="124"
+                                                   DefaultSortDirection="Ascending"
+                                                   AllowSorting="True"
+                                                   ShowFilter="True"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}"
+                                                   CellStyle="{StaticResource RightAlign}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Movement}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Amount Type -->
+                    <caData:DataGridTemplateColumn x:Name="AmountType"
+                                                   ColumnName="AmountType"
+                                                   Width="100"
+                                                   Binding="{Binding AmountType}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_AmountType}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Movement Type -->
+                    <caData:DataGridTemplateColumn x:Name="MovementType"
+                                                   ColumnName="MovementType"
+                                                   Width="100"
+                                                   Binding="{Binding MovementType}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_MovementType}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- AuthorisationStatus -->
+                    <caData:DataGridTemplateColumn Width="124"
+                                                   Binding="{Binding AuthorisationStatus}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_AuthorisationStatus}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Description -->
+                    <caData:DataGridTemplateColumn Width="105"
+                                                   Binding="{Binding ClaimTransactionDescription}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Description}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>                                                        
+                  
+                    <!-- Claim Detail Type -->
+                    <caData:DataGridTemplateColumn Width="80"
+                                                   Binding="{Binding ClaimDetailTypeCode}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_ClmDtlType}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Claim Detail -->
+                    <caData:DataGridTemplateColumn Width="115"
+                                                   Binding="{Binding ClaimDetailTitle}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_ClaimDetail}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+                    
+                    <!-- Claim Detail Reference -->
+                    <caData:DataGridTemplateColumn Width="70"
+                                                   Binding="{Binding ClaimDetailReference}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_ClmDtlRef}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+                                     
+                    <!-- Original Currency -->
+                    <caData:DataGridTemplateColumn Width="60"
+                                                   Binding="{Binding OriginalCurrencyCode}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_OriginalCurrency}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Account Currency -->
+                    <caData:DataGridTemplateColumn Width="70"
+                                                   Binding="{Binding AccountingCurrencyCode}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_AccountCurrency}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+
+                    <!-- Reference -->
+                    <caData:DataGridTemplateColumn Width="105"
+                                                   Binding="{Binding ClaimTransactionHeaderReference}"
+                                                   HeaderStyle="{StaticResource multiColumnHeader}">
+                        <caData:DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding Source={StaticResource StringResources}, Path=AmountHistory_Reference}"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Left"></TextBlock>
+                        </caData:DataGridTemplateColumn.Header>
+                    </caData:DataGridTemplateColumn>
+                    
+                </CoreControls:XIAPSearchResultGrid.Columns>
+            </CoreControls:XIAPSearchResultGrid>
+        </DataTemplate>
+        <ccdts:XIAPDataTemplateSelector x:Key="GridColumnCriteria">
+            <ccdts:XIAPDataTemplateSelector.DataTemplates>
+                <ccdts:SelectorDataTemplate Template="{StaticResource TransactionsTemplate}"
+                                            Identifier="Transactions" />
+                <ccdts:SelectorDataTemplate Template="{StaticResource ClaimDetailsTemplate}"
+                                            Identifier="ClaimDetails" />
+                <ccdts:SelectorDataTemplate Template="{StaticResource AmountsTemplate}"
+                                            Identifier="Amounts" />
+            </ccdts:XIAPDataTemplateSelector.DataTemplates>
+        </ccdts:XIAPDataTemplateSelector>
+    </CoreControls:XIAPPanelBase.Resources>
+    <Grid>
+        <ContentControl x:Name="LayoutRoot"
+                        Grid.Row="1"
+                        VerticalContentAlignment="Stretch"
+                        HorizontalContentAlignment="Stretch"
+                        ccdts:DataTemplateSelection.DataTemplateSelector="{StaticResource GridColumnCriteria}"
+                        ccdts:DataTemplateSelection.DataTemplateIdentifier="{Binding Path=SelectedDisplayLevel}">
+        </ContentControl>
+    </Grid>
+</CoreControls:XIAPPanelBase>

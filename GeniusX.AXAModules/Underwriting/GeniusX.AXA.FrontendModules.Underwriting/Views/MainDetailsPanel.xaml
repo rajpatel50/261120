@@ -1,0 +1,169 @@
+﻿<CoreControls:XIAPPanelBase 
+    x:Class="GeniusX.AXA.FrontendModules.Underwriting.Views.Header.MainDetailsPanel"
+    xmlns:CoreControls="clr-namespace:XIAP.Frontend.CoreControls;assembly=XIAP.Frontend.CoreControls" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:controls="clr-namespace:XIAP.Frontend.CoreControls;assembly=XIAP.Frontend.CoreControls"
+    xmlns:Res="clr-namespace:GeniusX.AXA.FrontendModules.Underwriting.Resources"
+    xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Commands;assembly=Microsoft.Practices.Prism"
+    xmlns:Groupbox="clr-namespace:Groupbox;assembly=Groupbox" 
+    xmlns:validation="clr-namespace:XIAP.Validation;assembly=XIAP.Validation"
+    >
+    
+    <controls:XIAPPanelBase.Resources>
+        <Res:StringResources x:Key="Resource"/>
+    </controls:XIAPPanelBase.Resources>
+    
+    <Groupbox:GroupBox x:Name="_quoteHeader1" Style="{StaticResource DefaultGroupBox}" Header="{Binding  Path=MainDetailsPanelHeader}" IsTabStop="False">
+        <Grid x:Name="LayoutRoot" HorizontalAlignment="Left" VerticalAlignment="Stretch" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <validation:ValidatorManager Name="_validatorManager"/>
+
+            <CoreControls:XIAPValidatingTextBox x:Name="_submissionReference" 
+                                    Value="{Binding Mode=TwoWay, Path=HeaderData.HeaderReference}" 
+                                    Field="{Binding Mode=TwoWay, Path=HeaderFields.HeaderReference}" 
+                                    TitleOnTop="True" 
+                                    HorizontalAlignment="Left"/>
+            <Button Grid.Row="0" Grid.Column="1" Content="{Binding UpdateFromGeniusButtonText,Source={StaticResource Resource}}" 
+                                     HorizontalAlignment="Left" Margin="20,0,5,0" VerticalAlignment="Center"
+                                     cal:Click.Command="{Binding Path=UpdateFromGeniusCommand}" cal:Click.CommandParameter="{Binding Path=HeaderDto}" Style="{StaticResource DefaultButton}"/>
+            <Button Grid.Row="0" Grid.Column="2" Content="{Binding PolicySummaryButtonText,Source={StaticResource Resource}}" 
+                                     HorizontalAlignment="Left" Margin="20,0,5,0" VerticalAlignment="Center"
+                                     cal:Click.Command="{Binding Path=PolicySummaryCommand}" cal:Click.CommandParameter="{Binding Path=HeaderDto}" Style="{StaticResource DefaultButton}"/>
+            
+            <CoreControls:XIAPValidatingTextBox x:Name="_headerTitle"
+                                    Grid.Row="1" Grid.Column="0" 
+                                    Value="{Binding Mode=TwoWay, Path=HeaderVersionData.HeaderTitle}" 
+                                    Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.HeaderTitle}" 
+                                    TitleOnTop="True" 
+                                    HorizontalAlignment="Left" />
+            <CoreControls:XIAPValidatingTextBox x:Name="ProductCode" 
+                                     Grid.Row="1" Grid.Column="1"
+							         Field="{Binding Mode=TwoWay, Path=HeaderFields.Product}" 
+                                     AllowFormatting="False" TitleOnTop="True" IsEnabled="False"
+                                     Value="{Binding Mode=TwoWay,Path=ProductCodeAndDescription}"/>
+            <CoreControls:XIAPNameTextBox x:Name="_insured"
+                                     Grid.Row="2" 
+                                     UseNameIdValue="True"
+                                     NameUsageType="{Binding InsuredData.NameUsageTypeCode}"
+                                     InternalUsageType="Insured"
+                                     Field="{Binding Mode=TwoWay, Path=InsuredFields.NameID}" 
+                                     NameIdValue="{Binding Mode=TwoWay, Path=InsuredData.NameID}" 
+                                     HorizontalAlignment="Left" 
+                                     EffectiveDate="{Binding Mode=TwoWay, Path=HeaderVersionData.InceptionDate}"/>
+            <CoreControls:XIAPNameTextBox UseNameIdValue="True"
+                                     Grid.Row="2" Grid.Column="1" 
+                                     x:Name="Broker"
+                                     InternalUsageType="Broker"
+                                     NameUsageType="{Binding BrokerData.NameUsageTypeCode}"
+                                     Field="{Binding Mode=TwoWay, Path=BrokerFields.NameID}"  
+                                     NameIdValue="{Binding Mode=TwoWay, Path=BrokerData.NameID}"
+                                     HorizontalAlignment="Left"
+                                     EffectiveDate="{Binding Mode=TwoWay, Path=HeaderVersionData.InceptionDate}"/>
+            <CoreControls:XIAPValidatingTextBox x:Name="UnderwritingYear" 
+                                     Grid.Row="2" Grid.Column="2"
+                                     AllowFormatting="False"
+                                     Value="{Binding Mode=TwoWay, Path=HeaderVersionData.UnderwritingYear}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.UnderwritingYear}" TitleOnTop="True" 
+                                     HorizontalAlignment="Left"/>
+            
+            <CoreControls:XIAPValidatingCalendar x:Name="InceptionDate" 
+                                     Grid.Row="3" IsEnabled="False"
+                                     SelectedDate="{Binding Mode=TwoWay, Path=HeaderVersionData.InceptionDate}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.InceptionDate}" 
+                                     TitleOnTop="True"/>
+            <CoreControls:XIAPValidatingCalendar x:Name="ExpiryDate" 
+                                     Grid.Row="3" Grid.Column="1" IsEnabled="False"
+                                     SelectedDate="{Binding Mode=TwoWay, Path=HeaderVersionData.ExpiryDate}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.ExpiryDate}" 
+                                     TitleOnTop="True"/>            
+            <Button Grid.Row="3" Grid.Column="2" Content="{Binding AdjustDatesButtonText,Source={StaticResource Resource}}" 
+                                     HorizontalAlignment="Left" Margin="20,0,5,0" VerticalAlignment="Center"
+                                     cal:Click.Command="{Binding Path=HeaderAdjustDatesCommand}" cal:Click.CommandParameter="{Binding Path=HeaderDto}" Style="{StaticResource DefaultButton}"/>            
+                       
+            <CoreControls:XIAPValidatingCalendar x:Name="OriginalInceptionDate" 
+                                     Grid.Row="4" 
+                                     SelectedDate="{Binding Mode=TwoWay, Path=HeaderVersionData.OriginalInceptionDate}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.OriginalInceptionDate}" 
+                                     TitleOnTop="True"/>
+            <CoreControls:XIAPValidatingCalendar x:Name="WrittenDate"  
+                                     Grid.Row="4" Grid.Column="1"
+                                     SelectedDate="{Binding Mode=TwoWay, Path=HeaderVersionData.WrittenDate}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.WrittenDate}" 
+                                     TitleOnTop="True"/>
+            <CoreControls:XIAPValidatingCalendar x:Name="ReceivedDate" 
+                                     Grid.Row="4" Grid.Column="2"
+                                     SelectedDate="{Binding Mode=TwoWay, Path=HeaderVersionData.ReceivedDate}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.ReceivedDate}" 
+                                     TitleOnTop="True"/>
+            
+            <CoreControls:XIAPValidatingCalendar x:Name="TargateResponceDate" 
+                                     Grid.Row="5" 
+                                     SelectedDate="{Binding Mode=TwoWay, Path=HeaderVersionData.TargetResponseDate}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.TargetResponseDate}" 
+                                     TitleOnTop="True"/>
+            <CoreControls:XIAPValidatingCalendar x:Name="ValidUntilDate"  
+                                     Grid.Row="5" Grid.Column="1" 
+                                     SelectedDate="{Binding Mode=TwoWay, Path=HeaderVersionData.ValidUntilDate}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.ValidUntilDate}" 
+                                     TitleOnTop="True"/>
+           <CoreControls:XIAPValidatingCheckBox x:Name="IsLongTermAgreement"
+                                     Grid.Row="6"
+                                     IsChecked ="{Binding Mode=TwoWay, Path=HeaderVersionData.IsLongTermAgreement}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.IsLongTermAgreement}" 
+                                     TitleOnTop="True" />
+            <CoreControls:XIAPValidatingCalendar x:Name="LongTermAgreementFromDate"  
+                                     Grid.Row="6" Grid.Column="1"
+                                     SelectedDate="{Binding Mode=TwoWay, Path=HeaderVersionData.LongTermAgreementFromDate}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.LongTermAgreementFromDate}" 
+                                     TitleOnTop="True"/>
+            <CoreControls:XIAPValidatingCalendar x:Name="LongTermAgreementToDate" 
+                                     Grid.Row="6" Grid.Column="2"       
+                                     SelectedDate="{Binding Mode=TwoWay, Path=HeaderVersionData.LongTermAgreementToDate}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.LongTermAgreementToDate}" 
+                                     TitleOnTop="True"/>
+            
+            <CoreControls:XIAPValidatingCheckBox x:Name="IsUnlimitedMaximumExposure"
+                                     Grid.Row="7" 
+                                     IsChecked ="{Binding Mode=TwoWay, Path=HeaderVersionData.IsUnlimitedMaximumExposure}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.IsUnlimitedMaximumExposure}" 
+                                     TitleOnTop="True" />
+            <CoreControls:XIAPValidatingCheckBox x:Name="IsFreedomOfService"
+                                     Grid.Row="7" Grid.Column="1" 
+                                     IsChecked ="{Binding Mode=TwoWay, Path=HeaderVersionData.IsFreedomOfService}" 
+                                     Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.IsFreedomOfService}" 
+                                     TitleOnTop="True" />
+            <CoreControls:XIAPValidatingComboBox x:Name="CoinsuranceRole" 
+                                     Grid.Row="7" Grid.Column="2"
+						             Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.CoinsuranceRole}" 
+                                     SelectedCode ="{Binding Mode=TwoWay, Path=HeaderVersionData.CoinsuranceRole}"/>
+
+            <CoreControls:XIAPValidatingComboBox x:Name="WordingResponsibility" 
+                                    Grid.Row="8" 
+							        Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.WordingResponsibility}" 
+                                    SelectedCode ="{Binding Mode=TwoWay, Path=HeaderVersionData.WordingResponsibility}"/>
+            <CoreControls:XIAPValidatingComboBox x:Name="HeaderLayerCode" 
+                                    Grid.Row="8" Grid.Column="1" 
+							        Field="{Binding Mode=TwoWay, Path=HeaderVersionFields.HeaderLayerCode}" 
+                                    SelectedCode ="{Binding Mode=TwoWay, Path=HeaderVersionData.HeaderLayerCode}"/>
+            
+        </Grid>
+
+    </Groupbox:GroupBox>
+</CoreControls:XIAPPanelBase>

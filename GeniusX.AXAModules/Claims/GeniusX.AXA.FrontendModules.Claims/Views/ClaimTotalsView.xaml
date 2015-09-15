@@ -1,0 +1,78 @@
+﻿<inf:XIAPPanelBase x:Class="GeniusX.AXA.Claims.FrontendModules.Views.ClaimTotalsView"
+           xmlns:cc="clr-namespace:XIAP.Frontend.CoreControls;assembly=XIAP.Frontend.CoreControls"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:ResX="clr-namespace:GeniusX.AXA.FrontendModules.Claims.Resources"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:inf="clr-namespace:XIAP.Frontend.CoreControls;assembly=XIAP.Frontend.CoreControls"
+           xmlns:Groupbox="clr-namespace:Groupbox;assembly=Groupbox"
+           xmlns:markupExt="clr-namespace:XIAP.Frontend.Infrastructure.BusinessTerms;assembly=XIAP.Frontend.Infrastructure"
+           mc:Ignorable="d"
+           >
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+          <ResX:StringResources x:Name="Resource" />
+            <ResourceDictionary x:Name="ResDicT">
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="/Xiap.UI;component/ResourceDictionaries/CoreControls.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="ActionsGrid" Margin="5,0,10,5" Grid.Row="0" Grid.Column="0">
+            <cc:XIAPValidatingComboBox  HorizontalAlignment="Left" x:Name="ClaimDetailsFilterCombo" ItemsSource="{Binding Path=ClaimDetailFilter, Mode=TwoWay}" SelectedCode="{Binding Path=SelectedClaimDetailFilter, Mode=TwoWay}" Title="Claim Detail Filter" TitleOnTop="True" Width="200" />
+            <cc:XIAPValidatingComboBox  HorizontalAlignment="Left" x:Name="ClaimTransactionFilterCombo" ItemsSource="{Binding Path=ClaimTransactionFilter, Mode=TwoWay}" SelectedCode="{Binding Path=SelectedClaimTransactionFilter, Mode=TwoWay}" Title="Claim Transaction Filter" TitleOnTop="True" Width="200"/>
+            <cc:XIAPValidatingComboBox  HorizontalAlignment="Left" x:Name="ClaimAmountFilterCombo" ItemsSource="{Binding Path=ClaimAmountFilter, Mode=TwoWay}" SelectedCode="{Binding Path=SelectedClaimAmountFilter, Mode=TwoWay}" Title="Amounts Shown" TitleOnTop="True" Width="200" Visibility="{Binding Path=IsAmountShownFilterVisible,Mode=TwoWay}"/>
+        </StackPanel>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="AXAPhase2ActionGrid" Margin="5,0,10,5" Grid.Row="1" Grid.Column="0">
+        <cc:XIAPValidatingTextBox  HorizontalAlignment="Left" x:Name="AXAManagedShare" Value="{Binding Mode=TwoWay, Path=AXAManagedShare}" Field="{Binding Mode=OneWay, Path=AXAManagedShareField}" Title="{markupExt:Resourcex ResxKey= AXAManagedShare,ResxType=AXASearch}" TitleOnTop="True" Width="200" />
+        <cc:XIAPValidatingTextBox  HorizontalAlignment="Left" x:Name="AXAShare" Value="{Binding Mode=TwoWay, Path=AXAShare}" Field="{Binding Mode=OneWay, Path=AXAShareField}" Title="{markupExt:Resourcex ResxKey= AXAShare,ResxType=AXASearch}" TitleOnTop="True" Width="200" />
+        <cc:XIAPValidatingComboBox HorizontalAlignment="Left" x:Name="ShareShownCombo" ItemsSource="{Binding Path=ShareShownFilter, Mode=TwoWay}" SelectedCode="{Binding Path=SelectedShareShown, Mode=TwoWay}" Title="{markupExt:Resourcex ResxKey= ShareShown,ResxType=AXASearch}" TitleOnTop="True" Width="200" Visibility="{Binding Path=IsShareShowmFilterVisible}"/>
+      </StackPanel>
+        <Groupbox:GroupBox Style="{StaticResource DefaultGroupBox}"
+                       x:Name="_claimDetailFilter"
+                       Header="{Binding Path=ClaimTotalTitle}"
+                       IsTabStop="False" Grid.Row="2" Grid.Column="0">
+
+            <Grid x:Name="AmountGrid" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <cc:XIAPValidatingTextBox x:Name="TotalClaimLoss" Grid.Row="1" Grid.Column="0" Value="{Binding Mode=TwoWay, Path=TotalClaimLoss}" Field="{Binding Mode=OneWay, Path=TotalClaimLossField}" Title="Total Claim Loss" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True"  />
+                <cc:XIAPValidatingTextBox x:Name="Excess" Grid.Row="1" Grid.Column="1" Value="{Binding Mode=TwoWay, Path=Excess}" Field="{Binding Mode=OneWay, Path=ExcessField}" Title="Excess" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Left" AllowFormatting="True"/>
+                <cc:XIAPValidatingTextBox x:Name="OEstimate" Grid.Row="2" Grid.Column="0" Value="{Binding Mode=TwoWay, Path=OutstandingEstimate}" Field="{Binding Mode=OneWay, Path=OutstandingEstimateField}" Title="O/S Estimate" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True"/>
+                <cc:XIAPValidatingTextBox x:Name="OREstimate" Grid.Row="2" Grid.Column="1" Value="{Binding Mode=TwoWay, Path=OutstandingRecoveryEstimate}" Field="{Binding Mode=OneWay, Path=OutstandingRecoveryEstimateField}" Title="O/S Recovery Estimate" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True"/>
+                <cc:XIAPValidatingTextBox x:Name="OULREstimate" Grid.Row="2" Grid.Column="2" Value="{Binding Mode=TwoWay, Path=OutstandingULREstimate}" Field="{Binding Mode=OneWay, Path=OutstandingULREstimateField}" Title="O/S ULR Estimate" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True"/>
+                <cc:XIAPValidatingTextBox x:Name="PIProgress" Grid.Row="3" Grid.Column="0" Value="{Binding Mode=TwoWay, Path=PaymentsInProgress}" Field="{Binding Mode=OneWay, Path=PaymentsInProgressField}" Title="Payments in Progress" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True"/>
+                <cc:XIAPValidatingTextBox x:Name="RIProgress" Grid.Row="3" Grid.Column="1" Value="{Binding Mode=TwoWay, Path=RecoveryInProgress}" Field="{Binding Mode=OneWay, Path=RecoveryInProgressField}" Title="Recoveries in Progress" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True"/>
+                <cc:XIAPValidatingTextBox x:Name="ULRIProgress" Grid.Row="3" Grid.Column="2" Value="{Binding Mode=TwoWay, Path=ULR}" Field="{Binding Mode=OneWay, Path=ULRField}" Title="ULR in Progress" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True"/>
+                <cc:XIAPValidatingTextBox x:Name="TPayments" Grid.Row="4" Grid.Column="0" Value="{Binding Mode=TwoWay, Path=TotalPaymentsPaid}" Field="{Binding Mode=OneWay, Path=TotalPaymentsPaidField}" Title="Total Payments" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True" />
+                <cc:XIAPValidatingTextBox x:Name="RCompleted" Grid.Row="4" Grid.Column="1" Value="{Binding Mode=TwoWay, Path=RecoveriesCompleted}" Field="{Binding Mode=OneWay, Path=RecoveriesCompletedField}" Title="Recoveries Completed" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True" />
+                <cc:XIAPValidatingTextBox x:Name="ULRCompleted" Grid.Row="4" Grid.Column="2" Value="{Binding Mode=TwoWay, Path=ULRCompleted}" Field="{Binding Mode=OneWay, Path=ULRCompletedField}" Title="ULR Completed" TitleOnTop="True" Height="Auto" Width="200" HorizontalAlignment="Right" AllowFormatting="True" />
+            </Grid>
+
+        </Groupbox:GroupBox>
+    </Grid>
+</inf:XIAPPanelBase>

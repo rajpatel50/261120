@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{551BDCF2-F222-40D9-B98C-E80F00EED0D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <RootNamespace>GeniusX.AXA.Claims.BusinessLogic</RootNamespace>
+    <AssemblyName>GeniusX.AXA.Claims.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\GeniusX.AXA.Claims.BusinessLogic.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\AutoMapper\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="K2ServiceClient">
+      <HintPath>..\..\..\Lib\XIAP\K2ServiceClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xiap.Claims.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Claims.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Claims.BusinessLogic">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Claims.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Claims.BusinessTransaction">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Claims.BusinessTransaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Claims.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Claims.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.Common">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.DataMapping">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.DataMapping.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.DPService">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.DPService.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.Entity">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.Search">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.GeniusIntegration.BusinessLogic">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.GeniusIntegration.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.InsuranceDirectory.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.InsuranceDirectory.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.InsuranceDirectory.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.InsuranceDirectory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.K2Integration.Task">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.K2Integration.Task.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Metadata.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Metadata.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Metadata.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Metadata.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Search">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.UW.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.UW.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.UW.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.UW.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Solution Items\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Solution Items\SolutionVersionInfo.cs">
+      <Link>Properties\SolutionVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AXACalculateDeductiblePlugin.cs" />
+    <Compile Include="AXAClaimDetailZeroReserveTransactionPlugin.cs" />
+    <Compile Include="AXAClaimPaymentRequestPlugin.cs" />
+    <Compile Include="AXAClaimTransactionAuthorisationProcessHandler.cs" />
+    <Compile Include="AXAClaimTransactionHeaderDefaulter.cs" />
+    <Compile Include="AXAClaimTransferPlugin.cs" />
+    <Compile Include="AXAClaimDocumentPlugin.cs" />
+    <Compile Include="AXAPolicyEDData.cs" />
+    <Compile Include="AXAClaimWarmupPlugin.cs" />
+    <Compile Include="CancelPaymentTransactionPlugin.cs" />
+    <Compile Include="ClaimAmountsSearchService.cs" />
+    <Compile Include="ClaimComponentsHelper.cs" />
+    <Compile Include="ClaimConstants.cs" />
+    <Compile Include="ClaimDetailChangeAttachmentPlugin.cs" />
+    <Compile Include="ClaimDetailReferenceDefaulterPlugin.cs" />
+    <Compile Include="ClaimDetailsPlugin.cs" />
+    <Compile Include="ClaimDetailToClaimInvolvementLinkPlugin.cs" />
+    <Compile Include="ClaimDocumentPlugin.cs" />
+    <Compile Include="ClaimEventOnCancelPaymentTransactionPlugin.cs" />
+    <Compile Include="ClaimEventTransactionPlugin.cs" />
+    <Compile Include="ClaimHandlerEventDefaulterPlugin.cs" />
+    <Compile Include="ClaimHeaderDefaultingDivisionPlugin.cs" />
+    <Compile Include="ClaimHeaderPlugin.cs" />
+    <Compile Include="ClaimHeaderStatusChangePlugin.cs" />
+    <Compile Include="ClaimInvolvementPlugin.cs" />
+    <Compile Include="ClaimLitigationPlugin.cs" />
+    <Compile Include="ClaimNameInvolvementPlugin.cs" />
+    <Compile Include="ClaimRecoveryPlugin.cs" />
+    <Compile Include="ClaimReferenceDefaulterPlugin.cs" />
+    <Compile Include="ClaimReviewTaskProcessHandler.cs" />
+    <Compile Include="PolicyAttachmentAndDateProcessingForClaimTransactionHeader.cs" />
+    <Compile Include="ClaimTransactionStatusChangePlugin.cs" />
+    <Compile Include="ClaimTransactionDescriptionPlugin.cs" />
+    <Compile Include="ClaimTransferDataCollection.cs" />
+    <Compile Include="ClaimTransferDataTransform.cs" />
+    <Compile Include="ClientSpecificDataPlugin.cs" />
+    <Compile Include="ClaimsBusinessLogicHelper.cs" />
+    <Compile Include="ClaimsDocumentLogInfoUpdater.cs" />
+    <Compile Include="ClaimsEventPlugin.cs" />
+    <Compile Include="ClaimsProcessHandler.cs" />
+    <Compile Include="ClaimsProcessHelper.cs" />
+    <Compile Include="AXAClaimsQueries.cs" />
+    <Compile Include="CustomDataUpdaters\AXAClaimDetailDataUpdater.cs" />
+    <Compile Include="CustomDataUpdaters\AXAClaimHeaderDataUpdater.cs" />
+    <Compile Include="AXAClaimFinancialAuthorisationProcessFolioGenerator.cs" />
+    <Compile Include="DeductibleReasonCode.cs" />
+    <Compile Include="GeniusPolicyFieldAttachmentPlugin.cs" />
+    <Compile Include="DriverExcessValidationPlugin.cs" />
+    <Compile Include="IAXAClaimsQuery.cs" />
+    <Compile Include="InactiveRecoveryPlugin.cs" />
+    <Compile Include="InactivityClaimDetail.cs" />
+    <Compile Include="InactivityDetectionTask.cs" />
+    <Compile Include="LoadDeductibleReasonCodes.cs" />
+    <Compile Include="PaymentAuthorisationUserResolution.cs" />
+    <Compile Include="PolicyAttachmentAndDateProcessingVehicleTypeValidationPlugin.cs" />
+    <Compile Include="PolicyAttachmentAndTypeOfLossValidationPlugin.cs" />
+    <Compile Include="PolicyAttachmentAndVehicleTypeValidationPlugin.cs" />
+    <Compile Include="PolicyAttachmentAndDateProcessingTypeOfLossValidationPlugin.cs" />
+    <Compile Include="PolicyAttachmentAndDateProcessingValidationPlugin.cs" />
+    <Compile Include="PolicyAttachmentAndDateProcessingForClaimDetail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecoveryAuthorisationUserResolution.cs" />
+    <Compile Include="QualityCheckTask.cs" />
+    <Compile Include="ReopenClaimTransactionPlugin.cs" />
+    <Compile Include="ReserveAuthorisationUserResolution.cs" />
+    <Compile Include="SingleCoverageAttachmentsPerClaimPlugin.cs" />
+    <Compile Include="TaskReassignEventQueue.cs" />
+    <Compile Include="TaskReassignEvent.cs" />
+    <Compile Include="UpdateEDDataPlugin.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\..\lib\StyleCop\Microsoft.StyleCop.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

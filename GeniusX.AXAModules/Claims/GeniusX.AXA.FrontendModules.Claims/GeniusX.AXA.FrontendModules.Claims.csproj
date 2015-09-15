@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1D92090-E7CB-4276-B659-8B15B45DC7D5}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeniusX.AXA.FrontendModules.Claims</RootNamespace>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <AssemblyName>GeniusX.AXA.FrontendModules.Claims</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>GeniusX.AXA.FrontendModules.Claims.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>
+    </SilverlightAppEntry>
+    <TestPageFileName>GeniusX.AXA.FrontendModules.ClaimsTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Bin\Release\GeniusX.AXA.FrontendModules.Claims.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentArt.Silverlight.UI.Common">
+      <HintPath>..\..\..\Lib\ComponentArtUIFramework\silverlight\client\ComponentArt.Silverlight.UI.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ComponentArt.Silverlight.UI.Data">
+      <HintPath>..\..\..\Lib\ComponentArtUIFramework\silverlight\client\ComponentArt.Silverlight.UI.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ComponentArt.Silverlight.UI.Layout">
+      <HintPath>..\..\..\Lib\ComponentArtUIFramework\silverlight\client\ComponentArt.Silverlight.UI.Layout.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ComponentArt.Silverlight.UI.Navigation">
+      <HintPath>..\..\..\Lib\ComponentArtUIFramework\silverlight\client\ComponentArt.Silverlight.UI.Navigation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Groupbox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\Lib\Groupbox\Groupbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\..\Lib\Prism\Silverlight\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Silverlight">
+      <HintPath>..\..\..\Lib\Prism\Silverlight\Microsoft.Practices.Unity.Silverlight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit">
+      <HintPath>..\..\..\Lib\SilverlightToolkit\Bin\System.Windows.Controls.Toolkit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.Frontend.CommonInfrastructure">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.Frontend.CommonInfrastructure.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.Frontend.Controls">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.Frontend.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.Frontend.CoreControls">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.Frontend.CoreControls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.Frontend.Infrastructure">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.Frontend.Infrastructure.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.Frontend.Shared">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.Frontend.Shared.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.Frontend.Shared.Core">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.Frontend.Shared.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.FrontendModules.Application">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.FrontendModules.Application.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.FrontendModules.Claims">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.FrontendModules.Claims.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.FrontendModules.Common">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.FrontendModules.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.FrontendModules.Search">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.FrontendModules.Search.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.FrontendModules.Tasks">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.FrontendModules.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="XIAP.Validation">
+      <HintPath>..\..\..\Lib\XIAP.Shell\XIAP.Validation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Solution Items\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Solution Items\SolutionVersionInfo.cs">
+      <Link>Properties\SolutionVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AXAClaimsModule.cs" />
+    <Compile Include="AXAClaimConstants.cs" />
+    <Compile Include="Controller\AXABulkEventEntryController.cs" />
+    <Compile Include="Controller\AXAClaimAmountHistoryController.cs" />
+    <Compile Include="Controller\AXAClaimController.cs" />
+    <Compile Include="ClaimSummaryCalculation\ClaimFinancialAmount.cs" />
+    <Compile Include="Controller\AXAClaimCoverageVerificationController.cs" />
+    <Compile Include="Controller\AXAClaimDocumentController.cs" />
+    <Compile Include="Controller\AXAClaimEventController.cs" />
+    <Compile Include="Controller\AXAClaimReopenCloseController.cs" />
+    <Compile Include="Controller\AXAClaimTransactionPreviewController.cs" />
+    <Compile Include="Controller\AXACoverageVerificationPolicySearchController.cs" />
+    <Compile Include="Controller\AXADocumentDataController.cs" />
+    <Compile Include="Controller\AXAGenericDataSetController.cs" />
+    <Compile Include="Controller\AXAManualAuthorisationController.cs" />
+    <Compile Include="Controller\AXAStandaloneClaimEventController.cs" />
+    <Compile Include="Controller\ClaimTaskInitialDueDateController.cs" />
+    <Compile Include="Controller\AXADeductibleReasonCodeController.cs" />
+    <Compile Include="Controller\DeductibleReasonCodeArg.cs" />
+    <Compile Include="Controller\ValidateReviewTaskController.cs" />
+    <Compile Include="Model\AXABulkEventEntryModel.cs" />
+    <Compile Include="Model\AXABulkEventEntryRow.cs" />
+    <Compile Include="Model\AXAClaimDetailLinkModel.cs" />
+    <Compile Include="Model\AXAClaimDetailModel.cs" />
+    <Compile Include="Model\AXAClaimInsuredObjectLinkModel.cs" />
+    <Compile Include="Model\AXAClaimIOModel.cs" />
+    <Compile Include="Model\AXAClaimLitigationLinkModel.cs" />
+    <Compile Include="Model\AXAClaimLitigationModel.cs" />
+    <Compile Include="Model\AXAClaimModel.cs" />
+    <Compile Include="Model\AXAClaimRecoveryModel.cs" />
+    <Compile Include="Model\AXAClaimReopenCloseModel.cs" />
+    <Compile Include="Model\AXAClaimTransactionPreviewModel.cs" />
+    <Compile Include="Model\AXACoverageVerificationPolicySearchModel.cs" />
+    <Compile Include="Model\AXADocumentModel.cs" />
+    <Compile Include="Model\AXAEventModel.cs" />
+    <Compile Include="Model\AXAGenericDataItemModel.cs" />
+    <Compile Include="Model\AXAReservePaymentToolBarModel.cs" />
+    <Compile Include="Model\AXASearchResultModel.cs" />
+    <Compile Include="Model\ClaimPaymentRejectReasonModel.cs" />
+    <Compile Include="Model\ClaimTaskInitialDueDateModel.cs" />
+    <Compile Include="Model\DeductibleReasonCodeModel.cs" />
+    <Compile Include="Model\ValidateReviewTaskModel.cs" />
+    <Compile Include="Model\VisibilityEventArgs.cs" />
+    <Compile Include="Navigation\AXAAllClaimNameInvolvementNodeRenderBehaviour.cs" />
+    <Compile Include="Navigation\AXAAllDriverNodeRenderBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimDetailChildrenAvailabilityBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimDetailLinksNodeAvailabilityBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimDetailNodeRenderBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimGenericDataItemNodeRenderBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimIOLinksNodeAvailabilityBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimNameInvolvementGroupNodeBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimVehiclesChildrenLoadingBehaviour.cs" />
+    <Compile Include="Navigation\AXADriverNodeRenderBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimDetailInvolvementLinksNodeAvailabilityBehaviour.cs" />
+    <Compile Include="Navigation\AXALitigationChildrenAvailabilityBehaviour.cs" />
+    <Compile Include="Navigation\AXALitigationInvolvementLinksNodeAvailabilityBehaviour.cs" />
+    <Compile Include="Navigation\AXASAndSD2NodeRenderBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimsEventNodeRenderBehaviour.cs" />
+    <Compile Include="Navigation\AXAClaimSummaryTreeNodeLoadingBehaviour.cs" />
+    <Compile Include="Notifications\PaymentAuthorisationTaskNotificationRequest.cs" />
+    <Compile Include="Plugins\ClaimTaskInitialDueDateNavigatorPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\StringResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Search\AXAClaimSearch.cs" />
+    <Compile Include="Search\AXAClaimSearchBase.cs" />
+    <Compile Include="Search\Controller\AXAClaimPopupSearchController.cs" />
+    <Compile Include="Search\Controller\AXAGlobalSearchController.cs" />
+    <Compile Include="Search\Controller\ClaimSearchController.cs" />
+    <Compile Include="Search\DuplicateSearchEvent.cs" />
+    <Compile Include="Search\Model\AXASearchResultsModel.cs" />
+    <Compile Include="Search\Model\ClaimSearchModel.cs" />
+    <Compile Include="Search\Model\ClaimSearchRow.cs" />
+    <Compile Include="Search\Views\ClaimSearchResult.xaml.cs">
+      <DependentUpon>ClaimSearchResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddressNameInvolvementView.xaml.cs">
+      <DependentUpon>AddressNameInvolvementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BlankView.xaml.cs">
+      <DependentUpon>BlankView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClaimAmountHistoryResults.xaml.cs">
+      <DependentUpon>ClaimAmountHistoryResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClaimAmountHistorySearch.xaml.cs">
+      <DependentUpon>ClaimAmountHistorySearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClaimPaymentRejectReasonView.xaml.cs">
+      <DependentUpon>ClaimPaymentRejectReasonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClaimTaskInitialDueDateView.xaml.cs">
+      <DependentUpon>ClaimTaskInitialDueDateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClaimTotalsView.xaml.cs">
+      <DependentUpon>ClaimTotalsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmInactiveClaimDetailView.xaml.cs">
+      <DependentUpon>ConfirmInactiveClaimDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmInactiveRecoveryClaimDetailView.xaml.cs">
+      <DependentUpon>ConfirmInactiveRecoveryClaimDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeductibleReasonCodesView.xaml.cs">
+      <DependentUpon>DeductibleReasonCodesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventDetailsView.xaml.cs">
+      <DependentUpon>EventDetailsView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Search\Views\ClaimSearchResult.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddressNameInvolvementView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BlankView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClaimAmountHistoryResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ClaimAmountHistorySearch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ClaimPaymentRejectReasonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClaimTaskInitialDueDateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ClaimTotalsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfirmInactiveClaimDetailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ConfirmInactiveRecoveryClaimDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DeductibleReasonCodesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EventDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StringResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <Import Project="$(SolutionDir)\..\lib\StyleCop\Microsoft.StyleCop.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A3012F56-E3C4-4B93-93CF-CD409A86A750}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Xiap.DataMigration.GeniusInterface.AXACS</RootNamespace>
+    <AssemblyName>Xiap.DataMigration.GeniusInterface.AXACS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Xiap.DataMigration.GeniusInterface.AXACS.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Lib\AutoMapper\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Lib\Dapper.1.12.1\lib\net40\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.Data.DB2.iSeries, Version=10.0.0.0, Culture=neutral, PublicKeyToken=9cdb2ebfb1f93a26">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\IBM.Data.DB2.iSeries\IBM.Data.DB2.iSeries.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Lib\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\EnterpriseLibrary\Bin\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\..\Lib\EnterpriseLibrary\Bin\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Lib\Newtonsoft.Json.4.5.10\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=0.0.4303.21337, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Lib\Dataflow TPL\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xiap.Accounts.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Accounts.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Accounts.BusinessLogic">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Accounts.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Accounts.BusinessTransaction">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Accounts.BusinessTransaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Accounts.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Accounts.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Caching">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Claims.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Claims.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Claims.BusinessLogic">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Claims.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Claims.BusinessTransaction">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Claims.BusinessTransaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Claims.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Claims.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.ClientServices.Facade">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.ClientServices.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.ClientServices.Facade.DPSerializer">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.ClientServices.Facade.DPSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.Common">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.DataMapping">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.DataMapping.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.DPAsyncProcessHandler">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.DPAsyncProcessHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.DPEngine">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.DPEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.DPITPGenerationHandler">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.DPITPGenerationHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.DPService">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.DPService.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.Entity">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.Search">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Framework.TransactionProcessor">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Framework.TransactionProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.GeniusIntegration.BusinessLogic">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.GeniusIntegration.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.GeniusIntegration.Common">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.GeniusIntegration.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.InsuranceDirectory.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.InsuranceDirectory.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.InsuranceDirectory.BusinessLogic">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.InsuranceDirectory.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.InsuranceDirectory.BusinessTransaction">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.InsuranceDirectory.BusinessTransaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.InsuranceDirectory.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.InsuranceDirectory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.IORegister.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.IORegister.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.IORegister.BusinessLogic">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.IORegister.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.IORegister.BusinessTransaction">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.IORegister.BusinessTransaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.IORegister.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.IORegister.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.K2Integration.K2BPServices">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.K2Integration.K2BPServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Metadata.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Metadata.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Metadata.BusinessLogic">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Metadata.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Metadata.BusinessTransaction">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Metadata.BusinessTransaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Metadata.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Metadata.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Search">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.Testing.Utils">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.Testing.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.UW.BusinessComponent">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.UW.BusinessComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.UW.BusinessLogic">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.UW.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.UW.BusinessTransaction">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.UW.BusinessTransaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Xiap.UW.Data">
+      <HintPath>..\..\..\Lib\XIAP\Xiap.UW.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Solution Items\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Solution Items\SolutionVersionInfo.cs">
+      <Link>Properties\SolutionVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AmendClaimWithoutValidationTransaction.cs" />
+    <Compile Include="ClaimExtensions.cs" />
+    <Compile Include="Entities\AuthorisationLog.cs" />
+    <Compile Include="Entities\CoverageDatesCacheItem.cs" />
+    <Compile Include="Entities\MappingConfiguration.cs" />
+    <Compile Include="Entities\FlattenedTransaction.cs" />
+    <Compile Include="Entities\SectionDetailCacheItem.cs" />
+    <Compile Include="ExcessAndDeductibles\ExtensionMethods.cs" />
+    <Compile Include="ExcessAndDeductibles\MigrationHistoricalFinancialAmountData.cs" />
+    <Compile Include="ExcessAndDeductibles\MigrationInProgressFinancialAmountData.cs" />
+    <Compile Include="Gateways\GeniusGateway.cs" />
+    <Compile Include="Gateways\IGeniusGateway.cs" />
+    <Compile Include="Gateways\IGeniusXGateway.cs" />
+    <Compile Include="Gateways\IStagingGateway.cs" />
+    <Compile Include="GlobalClaimWakeUp.cs" />
+    <Compile Include="Handlers\AttachClaimToPolicyHandler.cs" />
+    <Compile Include="Handlers\CalculateDeductiblesHandler.cs" />
+    <Compile Include="Handlers\UpdateExcessAndDeductibles.cs" />
+    <Compile Include="Operations\Blocks\AttachClaimToPolicyBlock.cs" />
+    <Compile Include="Operations\Blocks\BlockDescriptionAttribute.cs" />
+    <Compile Include="Operations\Blocks\ClearLocksBlock.cs" />
+    <Compile Include="Operations\Blocks\CreateReviewTaskBlock.cs" />
+    <Compile Include="Operations\Blocks\ExcessAndDeductiblesBlock.cs" />
+    <Compile Include="Operations\Blocks\IBlock.cs" />
+    <Compile Include="Operations\Blocks\SetCustomCode18Block.cs" />
+    <Compile Include="Operations\Blocks\ValidateClaimBlock.cs" />
+    <Compile Include="Operations\ClaimMigratorOperations.cs" />
+    <Compile Include="Entities\Claim.cs" />
+    <Compile Include="Entities\ClaimDetail.cs" />
+    <Compile Include="Entities\ClaimReferenceCount.cs" />
+    <Compile Include="Entities\DiscoveredPolicyDetails.cs" />
+    <Compile Include="Entities\ProductEvent.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="Operations\Blocks\CreateClaimTransferRequestsBlock.cs" />
+    <Compile Include="Operations\Blocks\CreateNameTransferRequestsBlock.cs" />
+    <Compile Include="UpdateEventArgs.cs" />
+    <Compile Include="Gateways\GeniusXGateway.cs" />
+    <Compile Include="Gateways\StagingGateway.cs" />
+    <Compile Include="ClaimProcessorConfiguration.cs" />
+    <Compile Include="TransferToGenius.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XElementExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\System.Xml.XmlElement.datasource" />
+    <None Include="Properties\DataSources\Xiap.Claims.Data.ClaimHeaderData.datasource" />
+    <None Include="Properties\DataSources\Xiap.ClientServices.Facade.ClaimResponse.datasource" />
+    <None Include="Properties\DataSources\Xiap.ClientServices.Facade.Claims.ClaimEventEntryResponse.datasource" />
+    <None Include="Properties\DataSources\Xiap.ClientServices.Facade.Claims.ClaimTransactionPreviewResponse.datasource" />
+    <None Include="Properties\DataSources\Xiap.ClientServices.Facade.Claims.PayeeDetails.datasource" />
+    <None Include="Properties\DataSources\Xiap.ClientServices.Facade.ClaimTransactionHeaderResponse.datasource" />
+    <None Include="Properties\DataSources\Xiap.ClientServices.Facade.Common.Response.datasource" />
+    <None Include="Properties\DataSources\Xiap.ClientServices.Facade.Common.RetrievalResponse.datasource" />
+    <None Include="Properties\DataSources\Xiap.ClientServices.Facade.Metadata.ProductClaimDefinitionItem.datasource" />
+    <None Include="Properties\DataSources\Xiap.Framework.Data.Underwriting.NameInvolvementData.datasource" />
+    <None Include="Properties\DataSources\Xiap.Framework.Data.Underwriting.UWHeaderData.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BatchControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Claims\GeniusX.AXA.Claims.BusinessLogic\GeniusX.AXA.Claims.BusinessLogic.csproj">
+      <Project>{551BDCF2-F222-40D9-B98C-E80F00EED0D8}</Project>
+      <Name>GeniusX.AXA.Claims.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DPService\GeniusX.AXA.DPService\GeniusX.AXA.DPService.csproj">
+      <Project>{83fbd4b0-82b5-456e-96e6-297e83318fdb}</Project>
+      <Name>GeniusX.AXA.DPService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GeniusX.AXA.CustomUI\GeniusX.AXA.CustomUI.csproj">
+      <Project>{d328db94-3a6c-451f-b6f0-00360f3a8f7c}</Project>
+      <Name>GeniusX.AXA.CustomUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\InsuranceDirectory\GeniusX.AXA.InsuranceDirectory.BusinessLogic\GeniusX.AXA.InsuranceDirectory.BusinessLogic.csproj">
+      <Project>{5f5cbfa0-221f-4119-a317-733ee3776622}</Project>
+      <Name>GeniusX.AXA.InsuranceDirectory.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Underwriting\GeniusX.AXA.Underwriting.BusinessLogic\GeniusX.AXA.Underwriting.BusinessLogic.csproj">
+      <Project>{1f6678d6-cb93-4988-a510-7e62855952b8}</Project>
+      <Name>GeniusX.AXA.Underwriting.BusinessLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
