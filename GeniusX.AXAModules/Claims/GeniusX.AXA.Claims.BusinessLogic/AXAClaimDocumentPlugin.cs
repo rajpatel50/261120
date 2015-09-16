@@ -34,8 +34,12 @@ namespace GeniusX.AXA.Claims.BusinessLogic
                     {
                         propAccessorSet.SetProperty(claimEvent, ConfigurationManager.AppSettings[ClaimEventDocumentReferenceCustomReferenceField], document.DocumentReference);
                         propAccessorSet.SetProperty(claimEvent, ConfigurationManager.AppSettings[ClaimEventDocumentGroupReferenceCustomReferenceField], document.DocumentGroupReference);
-                        string generateTask = Convert.ToString(propAccessorGet.GetProperty(document, ConfigurationManager.AppSettings[ClaimDocumentGenerateTaskCustomCodeField]));
-                        propAccessorSet.SetProperty(claimEvent, ConfigurationManager.AppSettings[ClaimEventGenerateTaskCustomCodeField], generateTask);
+                        var generateTask = propAccessorGet.GetProperty(document, ConfigurationManager.AppSettings[ClaimDocumentGenerateTaskCustomCodeField]);
+                        if (generateTask != null)
+                        {
+                            propAccessorSet.SetProperty(claimEvent, ConfigurationManager.AppSettings[ClaimEventGenerateTaskCustomCodeField], Convert.ToString(generateTask));
+                        }
+
                         break;
                     }
             }

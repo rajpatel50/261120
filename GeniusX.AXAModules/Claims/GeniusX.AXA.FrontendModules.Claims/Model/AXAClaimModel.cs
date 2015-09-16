@@ -31,6 +31,8 @@ namespace GeniusX.AXA.FrontendModules.Claims.Model
         #region Private Variables
         private SearchParameters searchParameters;
         private SearchData searchData;
+        private decimal? _AXAManagedShare = 0.00m;
+        private decimal? _AXAShare = 0.00m;
         private decimal? _TotalClaimLoss = 0.00m;
         private decimal? _Excess = 0.00m;
         private decimal? _OutstandingEstimate = 0.00m;
@@ -94,9 +96,34 @@ namespace GeniusX.AXA.FrontendModules.Claims.Model
         #endregion
 
           #region Public properties
+        
+        public decimal? AXAManagedShare
+        {
+            get
+            {
+                return this._AXAManagedShare;
+            }
 
-        public decimal? AXAManagedShare { get; set; }
-        public decimal? AXAShare { get; set; }
+            set
+            {
+                this._AXAManagedShare = value;
+                this.OnPropertyChanged("AXAManagedShare");
+            }
+        }
+
+        public decimal? AXAShare
+        {
+            get
+            {
+                return this._AXAShare;
+            }
+
+            set
+            {
+                this._AXAShare = value;
+                this.OnPropertyChanged("AXAShare");
+            }
+        }
 
         public SearchParameters SearchParameters
         {
