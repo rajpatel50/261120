@@ -527,5 +527,14 @@ namespace GeniusX.AXA.FrontendModules.Claims.Resources {
                 return ResourceManager.GetString("SearchResultsModel_Claims", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share Shown.
+        /// </summary>
+        public static string ShareShown {
+            get {
+                return ResourceManager.GetString("ShareShown", resourceCulture);
+            }
+        }
     }
 }
