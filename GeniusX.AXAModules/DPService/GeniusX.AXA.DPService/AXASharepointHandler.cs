@@ -302,7 +302,7 @@ namespace GeniusX.AXA.DPService
         public void UpdateMetadata(string destinUrl, string documentReference, Dictionary<string, object> metadata)
         {
             NetworkCredential networkCredentials = null;
-
+            
             if (this.isCredentialsProvided)
             {
                 //// If explicit credentials are provided for SharePoint access, then connect via the given credentials.
@@ -313,16 +313,30 @@ namespace GeniusX.AXA.DPService
                 networkCredentials = new NetworkCredential(username, password, domain);
             }
 
-            destinUrl = this.GetRedirectURL(destinUrl, networkCredentials);
+            // Getting Site Url e.g, from destUrl http://52.18.212.77/sites/AXA/Motor/_layouts/15/DocIdRedir.aspx?ID=XUBERDOC-13-74 Getting http://52.18.212.77
+            string siteUrl = destinUrl.Substring(0, destinUrl.LastIndexOf("//") + 2) + destinUrl.Substring(destinUrl.LastIndexOf("//") + 2).Substring(0, destinUrl.Substring(destinUrl.LastIndexOf("//") + 2).IndexOf("/"));
 
-            string transportProtocol = "http://";
-            if (destinUrl.StartsWith("https://"))
+            while (destinUrl.IndexOf("DocIdRedir.aspx", StringComparison.InvariantCultureIgnoreCase) > 0)
             {
-                transportProtocol = "https://";
+                if (!destinUrl.StartsWith("http"))
+                {
+                    destinUrl = siteUrl + destinUrl;
+                }
+
+                destinUrl = this.GetRedirectURL(destinUrl, networkCredentials);
             }
 
-            int siteIndex = destinUrl.Substring(transportProtocol.Length).IndexOf('/');
-            string sharepointSite = destinUrl.Substring(0, transportProtocol.Length + siteIndex);
+            string claimProductCode = metadata[PRODUCT_CODE_FIELDNAME].ToString();
+            string productSiteUrl = AXAClaimProductHelper.GetProductFolderURL(claimProductCode).Trim();
+
+            // Retrieve the Sharepoint site URL from the Product URL. 
+            if (productSiteUrl.EndsWith("/"))
+            {
+                productSiteUrl = productSiteUrl.Substring(0, productSiteUrl.Length - 1);
+            }
+
+            string sharepointSite = productSiteUrl.Substring(0, productSiteUrl.LastIndexOf("/"));
+
             using (ClientContext clientContext = new ClientContext(sharepointSite))
             {
                 if (this.isCredentialsProvided)
@@ -334,7 +348,7 @@ namespace GeniusX.AXA.DPService
                 string urlToAccess = destinUrl.Replace(sharepointSite, string.Empty);
                 Web web = this.GetSite(clientContext, urlToAccess);
 
-                Microsoft.SharePoint.Client.File file = web.GetFileByServerRelativeUrl(urlToAccess);
+                Microsoft.SharePoint.Client.File file = web.GetFileByServerRelativeUrl(this.GetFileRelativeUrl(destinUrl));
                 clientContext.Load(file, f => f.ListItemAllFields);
                 clientContext.ExecuteQuery();
 
@@ -366,6 +380,25 @@ namespace GeniusX.AXA.DPService
         }
 
         /// <summary>
+        /// Method to get relative url of the document e.g., from destinUrl http://52.18.212.77/sites/AXA/Motor/Docs/XUK1029415MO/DocumentUploadTest.docx getting /sites/AXA/Motor/Docs/XUK1029415MO/DocumentUploadTest.docx
+        /// </summary>
+        /// <param name="destinUrl">Destination url</param>
+        /// <returns>Relative Url of the document</returns>
+        private string GetFileRelativeUrl(string destinUrl)
+        {
+            if (destinUrl.Contains("https://"))
+            {
+                destinUrl = destinUrl.Replace("https://", string.Empty);
+            }
+            else
+            {
+                destinUrl = destinUrl.Replace("http://", string.Empty);
+            }
+
+            return destinUrl.Substring(destinUrl.IndexOf("/"));
+        }
+
+        /// <summary>
         /// This method checks if a metadata update is required for the document in sharepoint.
         /// </summary>
         /// <param name="destinUrl">The url of the document.</param>
@@ -393,19 +426,21 @@ namespace GeniusX.AXA.DPService
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(documentUrl);
             req.Method = "HEAD";
-            req.AllowAutoRedirect = true;
+            req.AllowAutoRedirect = false;
             req.UseDefaultCredentials = false;
             req.Credentials = networkCredential;
 
+            string result = string.Empty;
             try
             {
-                req.GetResponse();
+                var response = req.GetResponse();
+                result = response.Headers["Location"];
             }
             catch
             {
             }
 
-            return req.Address.AbsoluteUri;
+            return result;
         }
 
         /// <summary>

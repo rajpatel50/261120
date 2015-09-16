@@ -61,7 +61,9 @@ namespace GeniusX.AXA.Claims.BusinessLogic
         {
             ClaimHeader claimHeader = pluginHelper.Component;
             IDecisionTableHelper decisiontablehelper = ObjectFactory.Resolve<IDecisionTableHelper>();
-            var component = decisiontablehelper.Call(ClaimConstants.TYPE_OF_LOSS_AND_COVERAGE_TYPE_DECISION_TABLE_CODE, DateTime.Now, claimHeader.ClaimHeaderAnalysisCode02, coverageTypeCode);
+            IDecisionTableComponent component = null;
+
+            decisiontablehelper.TryCall(ClaimConstants.TYPE_OF_LOSS_AND_COVERAGE_TYPE_DECISION_TABLE_CODE, DateTime.Now, out component, claimHeader.ClaimHeaderAnalysisCode02, coverageTypeCode);
 
             if (component == null || !component.IsValid)
             {
