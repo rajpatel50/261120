@@ -195,14 +195,8 @@
   <data name="DateOutside_CoverPeriod" xml:space="preserve">
     <value>Policy trigger date {0} is outside cover period ({1} - {2})</value>
   </data>
-  <data name="Attachment_Not_Allowed" xml:space="preserve">
-    <value>Attachment not allowed - the Genius.X policy has not been set up.</value>
-  </data>
   <data name="ReserveLitigation_NotAllowed_On_UnconfirmedClaim" xml:space="preserve">
     <value>Litigation/Offers/Recoveries cannot be recorded against an unconfirmed claim.</value>
-  </data>
-  <data name="Policy_Not_Verified" xml:space="preserve">
-    <value>Policy {0} not verified, unable to proceed with coverage verification.</value>
   </data>
   <data name="Mandatory_Field" xml:space="preserve">
     <value>{0} is mandatory</value>

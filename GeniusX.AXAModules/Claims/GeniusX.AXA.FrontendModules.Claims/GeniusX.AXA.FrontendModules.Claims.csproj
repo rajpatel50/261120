@@ -180,7 +180,6 @@
     <Compile Include="Controller\AXAClaimEventController.cs" />
     <Compile Include="Controller\AXAClaimReopenCloseController.cs" />
     <Compile Include="Controller\AXAClaimTransactionPreviewController.cs" />
-    <Compile Include="Controller\AXACoverageVerificationPolicySearchController.cs" />
     <Compile Include="Controller\AXADocumentDataController.cs" />
     <Compile Include="Controller\AXAGenericDataSetController.cs" />
     <Compile Include="Controller\AXAManualAuthorisationController.cs" />

@@ -130,7 +130,6 @@ namespace GeniusX.AXA.FrontendModules.Claims
             this._container.RegisterType<IView, DeductibleReasonCodesView>("DeductibleReasonCodesView");
             this._container.RegisterType<IViewController, AXADeductibleReasonCodeController>("AXADeductibleReasonCodeController");
             this._container.RegisterType<IViewController, AXAClaimReopenCloseController>("AXAClaimReopenCloseController");
-            this._container.RegisterType<IViewController, AXACoverageVerificationPolicySearchController>("AXACoverageVerificationPolicySearchController");
             this._container.RegisterType<IViewController, AXADocumentDataController>("AXADocumentDataController");
             this._container.RegisterType<IPreviewController, AXAClaimTransactionPreviewController>("AXAClaimTransactionPreviewController");
             this._container.RegisterType<IViewController, AXAGlobalSearchController>("AXAGlobalSearchController");

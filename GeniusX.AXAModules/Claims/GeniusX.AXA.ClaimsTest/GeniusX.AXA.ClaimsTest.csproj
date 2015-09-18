@@ -198,6 +198,7 @@
     <Compile Include="ReopenClaimTransactionPluginTest.cs" />
     <Compile Include="ReserveAuthorisationUserResolutionTest.cs" />
     <Compile Include="SingleCoverageAttachmentsPerClaimPluginTest.cs" />
+    <Compile Include="UKClaimsExternalPolicyVerificationTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GeniusX.AXA.Claims.BusinessLogic\GeniusX.AXA.Claims.BusinessLogic.csproj">

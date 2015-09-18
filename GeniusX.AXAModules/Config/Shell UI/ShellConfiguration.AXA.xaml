@@ -521,8 +521,6 @@
 
         <nav:NavGraph GraphName="CoverageVerificationGraph" ContainerView="ClaimCoverageVerificationView" StartNode="" Controller="AXAClaimCoverageVerificationController" TargetRegion="ContainerPopup">
         </nav:NavGraph>
-    <nav:NavGraph GraphName="AXACVPGRH" ContainerView="CoverageVerificatonPolicySearchView" Controller="AXACoverageVerificationPolicySearchController" TargetRegion="ContainerPopup">
-    </nav:NavGraph>
     <nav:NavGraph GraphName="PersonGraph" ContainerView="IDContainer" StartNode="Name" Controller="AXAPersonController" TargetRegion="ContentRegion" TreeNodeComponentMappingsName="PersonTreeview">
       <nav:NavNode NodeName="Summary" Views="PersonSummary,CompanyAddress,CompanyNameUsage" RegionName="ContentRegion" />
       <nav:NavNode NodeName="Name" Views="PersonMainDetails,AdditionalDetails" RegionName="ContentRegion" RenderBehaviour="NameNodeRenderBehaviour">

@@ -191,6 +191,7 @@
     <Compile Include="SingleCoverageAttachmentsPerClaimPlugin.cs" />
     <Compile Include="TaskReassignEventQueue.cs" />
     <Compile Include="TaskReassignEvent.cs" />
+    <Compile Include="UKClaimsExternalPolicyVerification.cs" />
     <Compile Include="UpdateEDDataPlugin.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
