@@ -193,7 +193,7 @@ namespace GeniusX.AXA.FrontendModules.Claims.Controller
             if (args != null)
             {
                 var warningsExist = args.GetProperty<bool>("WarningsExist");
-                if (warningsExist == false && !((DocumentUploadControllerArgs)args).Cancelled)
+                if (warningsExist == false && (!(args is DocumentUploadControllerArgs) || !((DocumentUploadControllerArgs)args).Cancelled))
                 {
                     this.Save();
                 }
