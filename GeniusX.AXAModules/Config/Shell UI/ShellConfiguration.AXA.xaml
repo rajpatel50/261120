@@ -3911,7 +3911,7 @@
             <!--Claim Amount History -->
             <tree:TreeStructureStore Node="ClaimAmountHistory" Label="Claim Amount History" AvailabilityBehaviour="ClaimAmountHistoryAvailabilityBehaviour" ComponentPathExpression="/Claim/ClaimHeader">
               <tree:TreeStructureStore.Children>
-                <tree:TreeStructureStore Node="DisplayClaimTransactionHeader" LabelProperty="DisplayClaimTransactionHeaderDescription" CreationBehaviour="DisplayClaimTransactionHeaderCreationBehaviour" ChildrenLoadingBehaviour="DisplayClaimTransactionHeaderChildrenLoadingBehaviour" ComponentPathExpression="." />
+                <tree:TreeStructureStore Node="DisplayClaimTransactionHeader" LabelProperty="Data.DisplayClaimTransactionHeaderDescription" CreationBehaviour="DisplayClaimTransactionHeaderCreationBehaviour" ChildrenLoadingBehaviour="DisplayClaimTransactionHeaderChildrenLoadingBehaviour" ComponentPathExpression="." />
               </tree:TreeStructureStore.Children>
             </tree:TreeStructureStore>
                                       
@@ -4169,7 +4169,7 @@
             <!--Claim Amount History -->
             <tree:TreeStructureStore Node="ClaimAmountHistory" Label="Claim Amount History" AvailabilityBehaviour="ClaimAmountHistoryAvailabilityBehaviour" ComponentPathExpression="/Claim/ClaimHeader">
               <tree:TreeStructureStore.Children>
-                <tree:TreeStructureStore Node="DisplayClaimTransactionHeader" LabelProperty="DisplayClaimTransactionHeaderDescription" CreationBehaviour="DisplayClaimTransactionHeaderCreationBehaviour" ChildrenLoadingBehaviour="DisplayClaimTransactionHeaderChildrenLoadingBehaviour" ComponentPathExpression="." />
+                <tree:TreeStructureStore Node="DisplayClaimTransactionHeader" LabelProperty="Data.DisplayClaimTransactionHeaderDescription" CreationBehaviour="DisplayClaimTransactionHeaderCreationBehaviour" ChildrenLoadingBehaviour="DisplayClaimTransactionHeaderChildrenLoadingBehaviour" ComponentPathExpression="." />
               </tree:TreeStructureStore.Children>
             </tree:TreeStructureStore>
             
