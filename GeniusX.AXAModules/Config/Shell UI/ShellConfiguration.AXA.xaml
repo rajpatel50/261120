@@ -3193,7 +3193,7 @@
                         <screenDef:InputScreenField Component="ClaimDocument" Property="DocumentTypeCode" Width="250" />
                         <screenDef:InputScreenField Component="ClaimDocument" Property="Description" Width="250" />
                         <screenDef:InputScreenField Property="DocumentDetails.FileSize"
-                                             Title="File Size"                                             
+                                             Title="File Size (KB)"                                             
                                              IsEnabled="false" Width="250" />
                         <screenDef:BlankScreenField IsLineBreak="true" />
                         <screenDef:InputScreenField Component="ClaimDocument" Property="DocumentReference" Width="250" />
