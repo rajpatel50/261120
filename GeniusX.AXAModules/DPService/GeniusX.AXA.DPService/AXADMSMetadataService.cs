@@ -13,7 +13,9 @@ using Xiap.Metadata.BusinessComponent;
 using Xiap.Framework.Configuration;
 using System.Xml;
 using System.Data;
+using Xiap.Framework;
 using FrameworkSecurity = Xiap.Framework.Security;
+
 
 namespace GeniusX.AXA.DPService
 {
@@ -55,17 +57,27 @@ namespace GeniusX.AXA.DPService
         /// <returns>A dictionary object of all the metadata.</returns>
         public Dictionary<string, object> GetMetadata(Xiap.Metadata.Data.IDocumentData document, Xiap.Metadata.Data.IDocumentControlLogData documentControlLog, IMetadataDocument metadataDocument, string reference, string detailReference)
         {
-            Dictionary<string, object> metadata = new Dictionary<string, object>();
-            ClaimDocument claimDocument = null;
-            if (document is ClaimDocument)
+            ClaimDocument claimDocument = document as ClaimDocument;
+
+            if (claimDocument == null)
             {
-                claimDocument = (ClaimDocument)document;
-            }
-            else
-            {
-                return null;
+                claimDocument = ObjectFactory.Resolve<IClaimsQuery>().GetClaimDocument(document.DocumentID);
             }
 
+            ClaimDocumentControlLog claimDocumentControlLog = documentControlLog as ClaimDocumentControlLog;
+
+            if (claimDocumentControlLog == null)
+            {
+                claimDocumentControlLog = claimDocument.DocumentControlLogs.FirstOrDefault(a => a.DocumentControlLogID == documentControlLog.DocumentControlLogID) as ClaimDocumentControlLog;
+            }
+
+
+            return this.GetMetadata(claimDocument, claimDocumentControlLog, reference);
+        }
+
+        private Dictionary<string, object> GetMetadata(ClaimDocument claimDocument, ClaimDocumentControlLog claimDocumentControlLog, string reference)
+        {
+            Dictionary<string, object> metadata = new Dictionary<string, object>();
             string documentType = claimDocument.DocumentTypeCode;
             if (documentType != null)
             {
@@ -73,36 +85,36 @@ namespace GeniusX.AXA.DPService
                 string documentTypeLongDesc = claimDocument.DocumentTypeCodeField.AllowedValues(Xiap.Framework.Metadata.Enumerations.DescriptionType.LongDescription).FirstOrDefault(a => a.Code == documentType).Description;
                 metadata.Add(DOCUMENT_TYPE_FIELDNAME, documentTypeLongDesc);
             }
-            
-            string customCode01 = document.CustomCode01;
+
+            string customCode01 = claimDocument.CustomCode01;
             if (customCode01 != null)
             {
                 //// Add Long description of CustomCode01 field.
                 string customCode01LongDesc = claimDocument.CustomCode01Field.AllowedValues(Xiap.Framework.Metadata.Enumerations.DescriptionType.LongDescription).FirstOrDefault(a => a.Code == customCode01).Description;
                 metadata.Add(CATEGORY_FIELDNAME, customCode01LongDesc);
             }
-             
-            string customCode02 = document.CustomCode02;
+
+            string customCode02 = claimDocument.CustomCode02;
             if (customCode02 != null)
             {
                 //// Add Long description of CustomCode02 field.
                 string customCode02LongDesc = claimDocument.CustomCode02Field.AllowedValues(Xiap.Framework.Metadata.Enumerations.DescriptionType.LongDescription).FirstOrDefault(a => a.Code == customCode02).Description;
                 metadata.Add(PRIORITY_FIELDNAME, customCode02LongDesc);
             }
-            
-            string description = document.Description;
+
+            string description = claimDocument.Description;
             if (description != null)
             {
                 metadata.Add(DESCRIPTION_FIELDNAME, description);
             }
 
-            string customDescription = document.CustomDescription01;
+            string customDescription = claimDocument.CustomDescription01;
             if (customDescription!=null)
             {
                 metadata.Add(SENDER_FIELDNAME, customDescription);
             }
 
-            string customCode03 = document.CustomCode03;
+            string customCode03 = claimDocument.CustomCode03;
             if (customCode03 != null)
             {
                 //// Add Long description of CustomCode03 field.
@@ -110,7 +122,7 @@ namespace GeniusX.AXA.DPService
                 metadata.Add(ORIGINAL_DOCUMENT_FIELDNAME, customCode03LongDesc);
             }
 
-            string customCode04 = document.CustomCode04;
+            string customCode04 = claimDocument.CustomCode04;
             if (customCode04 != null)
             {
                 //// Add Long description of CustomCode04 field.
@@ -118,7 +130,7 @@ namespace GeniusX.AXA.DPService
                 metadata.Add(INCOMING_OUTGOING_FIELDNAME, customCode04LongDesc);
             }
 
-            string customCode05 = document.CustomCode05;
+            string customCode05 = claimDocument.CustomCode05;
             if (customCode05 != null)
             {
                 //// Add Long description of CustomCode05 field.
@@ -126,7 +138,7 @@ namespace GeniusX.AXA.DPService
                 metadata.Add(CONFIDENTIAL_FIELDNAME, customCode05LongDesc);
             }
 
-            string customCode06 = document.CustomCode06;
+            string customCode06 = claimDocument.CustomCode06;
             if (customCode06 != null)
             {
                 //// Add Long description of CustomCode06 field.
@@ -134,13 +146,13 @@ namespace GeniusX.AXA.DPService
                 metadata.Add(ACTIVE_FIELDNAME, customCode06LongDesc);
             }
 
-            string customReference01 = document.CustomReference01;
+            string customReference01 = claimDocument.CustomReference01;
             if (customReference01!=null)
             {
                 metadata.Add(EXTERNAL_REFERENCE_FIELDNAME, customReference01);
             }
 
-            string customCode07 = document.CustomCode07;
+            string customCode07 = claimDocument.CustomCode07;
             if (customCode07 != null)
             {
                 //// Add Long description of CustomCode07 field.
@@ -150,34 +162,34 @@ namespace GeniusX.AXA.DPService
                     metadata.Add(ACQUISITION_CHANNEL_FIELDNAME, customCode07LongDesc);
                 }
             }
-             
+
             //// Claim Reference
             if (reference!=null)
             {
                 metadata.Add(CLAIM_REFERENCE_FIELDNAME, reference);
             }
 
-            string customReference02 = document.CustomReference02;
+            string customReference02 = claimDocument.CustomReference02;
             if (customReference02!=null)
             {
                 metadata.Add(DIGITALIZATION_ID_FIELDNAME, customReference02);
             }
 
-            DateTime? customDate02 = document.CustomDate02;
+            DateTime? customDate02 = claimDocument.CustomDate02;
             if (customDate02 != null)
             {
                 metadata.Add(PROCESSING_DATE_FIELDNAME, customDate02);
             }
 
-            
+
             string lob = null;
             ClaimHeader claimHeader = null;
-            
+
             claimHeader = claimDocument.ClaimHeader;
             if (claimDocument.ClaimHeader != null)
             {
                 lob = claimDocument.ClaimHeader.ClaimHeaderAnalysisCode01;
-                
+
                 if (lob != null)
                 {
                     //// Add Long description of ClaimHeader.ClaimHeaderAnalysisCode01 field.
@@ -187,55 +199,50 @@ namespace GeniusX.AXA.DPService
                         metadata.Add(LOB_FIELDNAME, claimHeaderAnalysisCode01LongDesc);
                     }
                 }
-                
+
                 string company = this.GetCompanyName(claimHeader);
                 if (company != null)
                 {
                     metadata.Add(ENTITY_FIELDNAME, company);
                 }
             }
-            
 
-            DateTime? customDate01 = document.CustomDate01;
+
+            DateTime? customDate01 = claimDocument.CustomDate01;
             if (customDate01 != null)
             {
                 metadata.Add(RECEPTION_DATE_FIELDNAME, customDate01);
             }
-   
-            string documentName = documentControlLog.DocumentName;
+
+            string documentName = claimDocumentControlLog.DocumentName;
             if (documentName!=null)
             {
                 metadata.Add(FILE_NAME_FIELDNAME, documentName);
             }
 
-            DateTime createdTime = documentControlLog.CreatedTime;
+            DateTime createdTime = claimDocumentControlLog.CreatedTime;
             metadata.Add(UPLOAD_DATE_FIELDNAME, createdTime);
 
-            if (documentControlLog is ClaimDocumentControlLog)
+            if (claimDocumentControlLog.CreatedByUserID != null)
             {
-                ClaimDocumentControlLog claimDocumentControlLog = (ClaimDocumentControlLog)documentControlLog;
-                if (claimDocumentControlLog.CreatedByUserID != null)
+                //// Fetch User description
+                FrameworkSecurity.User userDetail = FrameworkSecurity.UserCacheService.GetUserById(claimDocumentControlLog.CreatedByUserID.GetValueOrDefault(0));
+                if (userDetail != null)
                 {
-                    //// Fetch User description
-                    FrameworkSecurity.User userDetail = FrameworkSecurity.UserCacheService.GetUserById(claimDocumentControlLog.CreatedByUserID.GetValueOrDefault(0));
-                    if (userDetail != null)
+                    string createdByUser = userDetail.UserDescription;
+                    if (createdByUser != null)
                     {
-                        string createdByUser = userDetail.UserDescription;
-                        if (createdByUser!=null)
-                        {
-                            metadata.Add(UPLOADED_BY_FIELDNAME, createdByUser);
-                        }
+                        metadata.Add(UPLOADED_BY_FIELDNAME, createdByUser);
                     }
                 }
-           }
+            }
 
-            
             string relatedName = claimDocument.RelatedName;
             if (relatedName!=null)
             {
                 metadata.Add(RELATED_TO_FIELDNAME, relatedName);
             }
-        
+
             if (claimDocument!=null)
             {
                 string documentTemplateCode = claimDocument.DocumentTemplateCode;
@@ -250,8 +257,7 @@ namespace GeniusX.AXA.DPService
                 }
             }
             
-
-            string documentGroupReference = document.DocumentGroupReference;
+            string documentGroupReference = claimDocument.DocumentGroupReference;
             if (documentGroupReference != null)
             {
                 metadata.Add(DOCUMENT_GROUP_REFERENCE_FIELDNAME, documentGroupReference);
@@ -271,7 +277,7 @@ namespace GeniusX.AXA.DPService
             {
                 metadata.Add("ProductCode", productCode);
             }
-   
+
             return metadata;
         }
 
