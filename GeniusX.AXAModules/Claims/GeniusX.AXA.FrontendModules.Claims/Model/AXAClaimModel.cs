@@ -31,8 +31,8 @@ namespace GeniusX.AXA.FrontendModules.Claims.Model
         #region Private Variables
         private SearchParameters searchParameters;
         private SearchData searchData;
-        private decimal? _AXAManagedShare = 0.00m;
-        private decimal? _AXAShare = 0.00m;
+        private decimal? _AXAManagedShare;
+        private decimal? _AXAShare;
         private decimal? _TotalClaimLoss = 0.00m;
         private decimal? _Excess = 0.00m;
         private decimal? _OutstandingEstimate = 0.00m;
