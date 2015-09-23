@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4c59c1b6-8ac2-49bd-8505-479e26afde34}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GeniusX.AXA.Workflows</RootNamespace>
+    <AssemblyName>GeniusX.AXA.Workflows</AssemblyName>
+    <Language>C#</Language>
+    <Name>GeniusX.AXA.Workflows</Name>
+    <BuildingInsideVisualStudio>False</BuildingInsideVisualStudio>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SelectedEnvironment>Development</SelectedEnvironment>
+    <DeploymentLabelName>XGLOBAL\GhodasaraR - 22/05/2013</DeploymentLabelName>
+    <DeploymentLabelDescription>
+    </DeploymentLabelDescription>
+    <SmartObjectConnectionStringProperty>$Field=SmartObject Server</SmartObjectConnectionStringProperty>
+    <WorkflowManagementConnectionStringProperty>$Field=Workflow Management Server</WorkflowManagementConnectionStringProperty>
+    <HistoryIsAdvanced>Normal</HistoryIsAdvanced>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'BuildInstaller' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <OutputPath>bin\BuildInstaller\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SourceCode\v3.5\ProjectSystem.targets" />
+  <ProjectExtensions>
+    <PersistableObjects>
+      <Project xmlns="">
+        <Guid>5115b1a2-f628-4f1a-bc2c-15c9bbd329ab</Guid>
+      </Project>
+    </PersistableObjects>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Content Include="FinancialAuthorisation.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="InactivityDetection.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="NewReOpenclaim.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PaymentCancellationNotification.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="PhoneLog.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Post.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="QualityControl.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RecoveryInactivityDetection.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReviewTaskFlow_Manual.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="TechnicalReferral.kprx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="FileUploadNotification.kprx">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>
