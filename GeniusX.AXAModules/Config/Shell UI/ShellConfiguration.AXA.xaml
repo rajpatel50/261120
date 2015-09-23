@@ -5648,37 +5648,45 @@
                 </conf:TaskPreviewMapping>
       <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Final Settlement Notification"
                       ControllerName="AXAClaimTransactionPreviewController"
+                    SystemComponent="ClaimHeader"
                       IdentifierKey="ClaimTransactionHeaderID">
       </conf:TaskPreviewMapping>
           <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Payment Notification"
                 ControllerName="ClaimTransactionPreviewController"
+                SystemComponent="ClaimHeader"
                 IdentifierKey="ClaimTransactionHeaderID">
           </conf:TaskPreviewMapping>
           <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Rejection Notification1"
                 ControllerName="ClaimTransactionPreviewController"
+                SystemComponent="ClaimHeader"
                 IdentifierKey="ClaimTransactionHeaderID">
           </conf:TaskPreviewMapping>
           <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Rejection Notification"
                 ControllerName="ClaimTransactionPreviewController"
+                SystemComponent="ClaimHeader"
                 IdentifierKey="ClaimTransactionHeaderID">
           </conf:TaskPreviewMapping>
           <conf:TaskPreviewMapping ProcessKey="PaymentCancellationNotification/Payment Cancellation"
                 ControllerName="ClaimTransactionPreviewController"
+                SystemComponent="ClaimHeader"
                 IdentifierKey="ClaimTransactionHeaderID">
           </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
                     ProcessKey="PhoneLog/Claim Phone Task" 
                     ControllerName="ClaimPreviewController" 
+                    SystemComponent="ClaimHeader"
                     IdentifierKey="ClaimHeaderReference,ClaimEventID">
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
                     ProcessKey="PhoneLog/Claim Detail Phone Task" 
                     ControllerName="ClaimDetailPreviewController" 
+                    SystemComponent="ClaimHeader"
                     IdentifierKey="ClaimHeaderReference,ClaimDetailReference,ClaimEventID">
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
                     ProcessKey="Post" 
                     ControllerName="ClaimPreviewController" 
+                    SystemComponent="ClaimHeader"
                     IdentifierKey="ClaimHeaderReference,ClaimEventID">
                     <conf:TaskPreviewMapping.TaskActionBehaviours>
                         <conf:TaskActionBehaviour 
@@ -5692,26 +5700,31 @@
                 <conf:TaskPreviewMapping 
                     ProcessKey="InactivityDetection/Claim Review" 
                     ControllerName="ClaimPreviewController" 
+                    SystemComponent="ClaimHeader"
                     IdentifierKey="ClaimHeaderReference,ClaimEventID">
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
                     ProcessKey="InactivityDetection/Claim Detail Review" 
-                    ControllerName="ClaimDetailPreviewController" 
+                    ControllerName="ClaimDetailPreviewController"
+                    SystemComponent="ClaimHeader" 
                     IdentifierKey="ClaimHeaderReference,ClaimDetailReference,ClaimEventID">
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
                     ProcessKey="RecoveryInactivityDetection/Claim Review" 
-                    ControllerName="ClaimPreviewController" 
+                    ControllerName="ClaimPreviewController"
+                    SystemComponent="ClaimHeader" 
                     IdentifierKey="ClaimHeaderReference,ClaimEventID">
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
                     ProcessKey="RecoveryInactivityDetection/Claim Detail Review" 
-                    ControllerName="ClaimDetailPreviewController" 
+                    ControllerName="ClaimDetailPreviewController"
+                    SystemComponent="ClaimHeader" 
                     IdentifierKey="ClaimHeaderReference,ClaimDetailReference,ClaimEventID">
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
                     ProcessKey="QualityControl/Quality Control Task" 
                     ControllerName="ClaimPreviewController" 
+                    SystemComponent="ClaimHeader"
                     IdentifierKey="ClaimHeaderReference">
                 </conf:TaskPreviewMapping>
             </conf:TaskConfiguration.TaskPreviewMappings>
