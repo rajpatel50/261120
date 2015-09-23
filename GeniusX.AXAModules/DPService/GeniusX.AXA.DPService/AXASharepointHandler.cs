@@ -346,7 +346,7 @@ namespace GeniusX.AXA.DPService
                 }
 
                 string urlToAccess = destinUrl.Replace(sharepointSite, string.Empty);
-                Web web = this.GetSite(clientContext, urlToAccess);
+                Web web = clientContext.Web;
 
                 Microsoft.SharePoint.Client.File file = web.GetFileByServerRelativeUrl(this.GetFileRelativeUrl(destinUrl));
                 clientContext.Load(file, f => f.ListItemAllFields);
@@ -555,50 +555,6 @@ namespace GeniusX.AXA.DPService
         public string UploadDocument(byte[] document, string documentName, string contentType, Dictionary<string, object> metadata, out bool isDocumentUploadDelayed)
         {
             throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// This method fetches the site in sharepoint for the specified url.
-        /// </summary>
-        /// <param name="clientContext">client context</param>
-        /// <param name="urlToUpload">The url</param>
-        /// <returns>The site in sharepoint</returns>
-        private Web GetSite(ClientContext clientContext, string urlToUpload)
-        {
-            using (new PerfLogger(typeof(AXASharepointHandler), "GetSite"))
-            {
-                if (_Logger.IsDebugEnabled)
-                {
-                    _Logger.Debug("GetSite()");
-                }
-
-                urlToUpload = urlToUpload.StartsWith("/") ? urlToUpload.Substring(1) : urlToUpload;
-                string[] strs = urlToUpload.Split('/');
-                Web web = clientContext.Web;
-                string relativeUrl = "/";
-                foreach (string str in strs)
-                {
-                    var query = clientContext.LoadQuery(web.Webs.Where(p => p.ServerRelativeUrl == relativeUrl + str));
-                    clientContext.ExecuteQuery();
-                    Web temp = query.FirstOrDefault();
-                    if (temp != null)
-                    {
-                        web = temp;
-                        relativeUrl += str + "/";
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-
-                if (_Logger.IsDebugEnabled)
-                {
-                    _Logger.Debug(string.Format("GetSite() -> site location {0}", web.ServerRelativeUrl));
-                }
-
-                return web;
-            }
         }
     }
 }
