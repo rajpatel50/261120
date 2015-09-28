@@ -468,6 +468,9 @@ namespace GeniusX.AXA.Claims.BusinessLogic
 											   where header.ClaimReference.Equals(reference)
 											   select header).Single();
 
+                    // We now need a context due to 6.1 processing
+                    claimHeader.Context = new ClaimsTransactionContext(new Guid().ToString(), "Claims", "DisplayClaim");
+
                     // Map the entity to the XML claim, XiapClaim.
 					IMappingStrategy<ClaimHeader, XiapClaim.ClaimHeader> strategy = new ClaimGenericMappingStrategy();
 					targetClaim = strategy.MapSourceToTarget(claimHeader);

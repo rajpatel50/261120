@@ -1,12 +1,29 @@
 ﻿<sharepointConfiguration>
+  <isCredentialsProvided>False</isCredentialsProvided>
   <locationTemplate>{0}/_layouts/DocIdRedir.aspx?ID={1}</locationTemplate>
-  <ProductDocumentURL>
-    <URL ProductCode="CGBIMO">http://doc.axa-cs.intraxa/sites/CLAIMS/XIAPDocumentManagement/Motor/</URL>
-    <URL ProductCode="CGBIPC">http://doc.axa-cs.intraxa/sites/CLAIMS/XIAPDocumentManagement/Liability/</URL>
-  </ProductDocumentURL>
   <contentTypes>
     <contentType DocumentLevel="UWHeader">Underwriting</contentType>
     <contentType DocumentLevel="ClaimHeader">Claim</contentType>
     <contentType DocumentLevel="ClaimDetail">Claim</contentType>
   </contentTypes>
+  <documentUploadSites defaultURL="http://doc.axa-cs.intraxa/sites/CLAIMS/XIAPDocumentManagement/Motor/">
+    <site>
+      <url>http://doc.axa-cs.intraxa/sites/CLAIMS/XIAPDocumentManagement/Motor/</url>
+      <productList>
+        <productCode>CGBIMO</productCode>
+      </productList>
+    </site>
+    <site>
+      <url>http://doc.axa-cs.intraxa/sites/CLAIMS/XIAPDocumentManagement/Liability/</url>
+      <productList>
+        <productCode>CGBIPC</productCode>
+      </productList>
+    </site>
+    <site>
+      <url>http://doc.axa-cs.intraxa/sites/CLAIMS/XIAPDocumentManagement/Aviation/</url>
+      <productList>
+        <productCode>CFRIAV</productCode>
+      </productList>
+    </site>
+  </documentUploadSites>
 </sharepointConfiguration>
