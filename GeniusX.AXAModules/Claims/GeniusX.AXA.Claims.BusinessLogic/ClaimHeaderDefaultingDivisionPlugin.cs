@@ -39,6 +39,7 @@ namespace GeniusX.AXA.Claims.BusinessLogic
         {
             bool isGroupCodeSet = false;
             ClaimHeader header = (ClaimHeader)component;
+            DateTime? validationDate = header.Context != null ? (DateTime?)header.ValidationDate : null;
 
             switch (field.PropertyName)
             {
@@ -68,30 +69,30 @@ namespace GeniusX.AXA.Claims.BusinessLogic
                         field.LookupParameters.GroupCode = ClaimConstants.EmptyGroup;
                     }
 
-                    this.SetFieldMandatory(field, header.ClaimHeaderAnalysisCode04VS, header.ClaimHeaderAnalysisCode04, header.ValidationDate);
+                    this.SetFieldMandatory(field, header.ClaimHeaderAnalysisCode04VS, header.ClaimHeaderAnalysisCode04, validationDate);
                     break;
 
                 case ClaimHeader.ClaimHeaderAnalysisCode05FieldName:
-                    this.SetFieldMandatory(field, header.ClaimHeaderAnalysisCode05VS, header.ClaimHeaderAnalysisCode04, header.ValidationDate);
+                    this.SetFieldMandatory(field, header.ClaimHeaderAnalysisCode05VS, header.ClaimHeaderAnalysisCode04, validationDate);
                     break;
 
                 case ClaimHeader.ClaimHeaderAnalysisCode06FieldName:
-                    this.SetFieldMandatory(field, header.ClaimHeaderAnalysisCode06VS, header.ClaimHeaderAnalysisCode05, header.ValidationDate);
+                    this.SetFieldMandatory(field, header.ClaimHeaderAnalysisCode06VS, header.ClaimHeaderAnalysisCode05, validationDate);
                     break;
 
                 case ClaimHeader.CustomCode01FieldName:   // UI Label = Circumstances 1
                     // CustomCode01VS =Circumstances 1
-                    this.SetFieldMandatory(field, header.CustomCode01VS, header.ClaimHeaderAnalysisCode02, header.ValidationDate);   // UI Label = Circumstance 1
+                    this.SetFieldMandatory(field, header.CustomCode01VS, header.ClaimHeaderAnalysisCode02, validationDate);   // UI Label = Circumstance 1
                     break;
 
                 case ClaimHeader.CustomCode02FieldName:   // UI Label = Circumstances 2
                     // CustomCode02VS =Circumstances 2
-                    this.SetFieldMandatory(field, header.CustomCode02VS, header.CustomCode01, header.ValidationDate);   // UI Label = Circumstance 2
+                    this.SetFieldMandatory(field, header.CustomCode02VS, header.CustomCode01, validationDate);   // UI Label = Circumstance 2
                     break;
 
                 case ClaimHeader.CustomCode03FieldName:   // UI Label = Circumstances 3; Only used for Motor Product - CGBIMO
                     // CustomCode03VS =Circumstances 3
-                    this.SetFieldMandatory(field, header.CustomCode03VS, header.CustomCode02, header.ValidationDate);   // UI Label = Circumstance 3; Only used for Motor Product - CGBIMO
+                    this.SetFieldMandatory(field, header.CustomCode03VS, header.CustomCode02, validationDate);   // UI Label = Circumstance 3; Only used for Motor Product - CGBIMO
                     break;
             }
 
