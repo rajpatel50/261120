@@ -826,7 +826,13 @@
       <conf:SettingParameter QualifierName="INACT" SettingValue="True" />
       <conf:SettingParameter QualifierName="RINACT" SettingValue="True" />
         </conf:ConfigurationSetting>
-      
+		
+        <!-- Setting to set value for automatic document navigation  QualifierName=TaskType  -->
+        <conf:ConfigurationSetting Key="AutoDocumentNavigation">
+            <conf:SettingParameter QualifierName="FileUploadNotification"  SettingValue="TRUE"/>
+        </conf:ConfigurationSetting>
+		
+ 
         <conf:ConfigurationSetting Key="AXACustomWebPages">
       <conf:SettingParameter QualifierName="PolicySummaryLocation" QualifierValue="*" SettingValue="http://DVACSGENX01:83/ClientServices/CustomUI/PolicySummary.aspx?PolicyHeaderId={HeaderID}&amp;Filename={FileName}&amp;ProductType={ProductType}&amp;HeaderReference={HeaderReference}" />
         </conf:ConfigurationSetting>
@@ -5509,7 +5515,12 @@
   <conf:ShellConfiguration.TaskConfiguration>
         <conf:TaskConfiguration UseCustomWorklist="true" TaskFilterOption="Overdue,Current">
       <conf:TaskConfiguration.TaskPreviewMappings>
+	  
+
+                <conf:TaskPreviewMapping ProcessKey="FileUploadNotification" SystemComponent="Document"  ControllerName="ClaimPreviewController" IdentifierKey="ClaimHeaderReference,DocumentReference,DocumentGroupReference">
+                </conf:TaskPreviewMapping>
         <conf:TaskPreviewMapping ProcessKey="NewReOpenclaim"
+				 SystemComponent="ClaimHeader"
                                  ControllerName="ClaimPreviewController" 
                                  IdentifierKey="ClaimHeaderReference">
           <conf:TaskPreviewMapping.TaskActionBehaviours>
@@ -5536,6 +5547,7 @@
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
                     ProcessKey="ReviewTaskFlow_Manual/Claim Review" 
+		    SystemComponent="ClaimHeader"
                     ControllerName="ClaimPreviewController" 
                     IdentifierKey="ClaimHeaderReference,ClaimEventID">
                     <conf:TaskPreviewMapping.TaskActionBehaviours>
@@ -5548,9 +5560,11 @@
                     </conf:TaskPreviewMapping.TaskActionBehaviours>
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping ProcessKey="TechnicalReferral" 
+		    			 SystemComponent="ClaimHeader"
                                          ControllerName="ClaimPreviewController" 
                                          IdentifierKey="ClaimHeaderReference" />
                 <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Authorise Payment"
+		    			 SystemComponent="ClaimTransaction"
                                          ControllerName="AXAClaimTransactionPreviewController"
                                          IdentifierKey="ClaimTransactionHeaderID">
                     <conf:TaskPreviewMapping.TaskActionBehaviours>
@@ -5567,6 +5581,7 @@
                     </conf:TaskPreviewMapping.TaskActionBehaviours>
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Authorise Payment grp"
+		    			 SystemComponent="ClaimTransaction"
                                          ControllerName="AXAClaimTransactionPreviewController"
                                          IdentifierKey="ClaimTransactionHeaderID">
                     <conf:TaskPreviewMapping.TaskActionBehaviours>
@@ -5583,6 +5598,7 @@
                     </conf:TaskPreviewMapping.TaskActionBehaviours>
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Authorise Recovery"
+		    			 SystemComponent="ClaimTransaction"
                                          ControllerName="AXAClaimTransactionPreviewController"
                                          IdentifierKey="ClaimTransactionHeaderID">
                     <conf:TaskPreviewMapping.TaskActionBehaviours>
@@ -5599,6 +5615,7 @@
                     </conf:TaskPreviewMapping.TaskActionBehaviours>
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Authorise Recovery grp"
+		    			 SystemComponent="ClaimTransaction"
                                          ControllerName="AXAClaimTransactionPreviewController"
                                          IdentifierKey="ClaimTransactionHeaderID">
                     <conf:TaskPreviewMapping.TaskActionBehaviours>
@@ -5615,6 +5632,7 @@
                     </conf:TaskPreviewMapping.TaskActionBehaviours>
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Authorise Estimate"
+		    			 SystemComponent="ClaimTransaction"
                                          ControllerName="AXAClaimTransactionPreviewController"
                                          IdentifierKey="ClaimTransactionHeaderID">
                     <conf:TaskPreviewMapping.TaskActionBehaviours>
@@ -5631,6 +5649,7 @@
                     </conf:TaskPreviewMapping.TaskActionBehaviours>
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Authorise Estimate grp"
+		    			 SystemComponent="ClaimTransaction"
                                          ControllerName="AXAClaimTransactionPreviewController"
                                          IdentifierKey="ClaimTransactionHeaderID">
                     <conf:TaskPreviewMapping.TaskActionBehaviours>
@@ -5648,27 +5667,26 @@
                 </conf:TaskPreviewMapping>
       <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Final Settlement Notification"
                       ControllerName="AXAClaimTransactionPreviewController"
-                    SystemComponent="ClaimHeader"
+		      SystemComponent="ClaimTransaction"
                       IdentifierKey="ClaimTransactionHeaderID">
       </conf:TaskPreviewMapping>
           <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Payment Notification"
                 ControllerName="ClaimTransactionPreviewController"
-                SystemComponent="ClaimHeader"
+		 SystemComponent="ClaimTransaction"
                 IdentifierKey="ClaimTransactionHeaderID">
           </conf:TaskPreviewMapping>
           <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Rejection Notification1"
                 ControllerName="ClaimTransactionPreviewController"
-                SystemComponent="ClaimHeader"
+                SystemComponent="ClaimTransaction"
                 IdentifierKey="ClaimTransactionHeaderID">
           </conf:TaskPreviewMapping>
           <conf:TaskPreviewMapping ProcessKey="FinancialAuthorisation/Rejection Notification"
                 ControllerName="ClaimTransactionPreviewController"
-                SystemComponent="ClaimHeader"
+                SystemComponent="ClaimTransaction"
                 IdentifierKey="ClaimTransactionHeaderID">
           </conf:TaskPreviewMapping>
           <conf:TaskPreviewMapping ProcessKey="PaymentCancellationNotification/Payment Cancellation"
                 ControllerName="ClaimTransactionPreviewController"
-                SystemComponent="ClaimHeader"
                 IdentifierKey="ClaimTransactionHeaderID">
           </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
@@ -5680,7 +5698,6 @@
                 <conf:TaskPreviewMapping 
                     ProcessKey="PhoneLog/Claim Detail Phone Task" 
                     ControllerName="ClaimDetailPreviewController" 
-                    SystemComponent="ClaimHeader"
                     IdentifierKey="ClaimHeaderReference,ClaimDetailReference,ClaimEventID">
                 </conf:TaskPreviewMapping>
                 <conf:TaskPreviewMapping 
