@@ -5685,6 +5685,7 @@
                 SystemComponent="ClaimTransaction"
                 IdentifierKey="ClaimTransactionHeaderID">
           </conf:TaskPreviewMapping>
+        <!-- The System Component attribute is not included in the Payment Cancellation task preview mapping since (unlike the data in K2), the Payment Cancellation process data in Xuber is not currently linked to a Claim Transaction Header. -->
           <conf:TaskPreviewMapping ProcessKey="PaymentCancellationNotification/Payment Cancellation"
                 ControllerName="ClaimTransactionPreviewController"
                 IdentifierKey="ClaimTransactionHeaderID">
